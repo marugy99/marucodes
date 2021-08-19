@@ -1,12 +1,23 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react"
+import { formatDate } from "../../functions/coolFunctions";
 
 const SinglePost = ({ singlePost }) => {
+    console.log(singlePost)
+
     return (
         <>
         {singlePost && 
             <article>
                 <h1>{singlePost.title}</h1>
+                <p>{formatDate(singlePost.publishedAt)}</p>
+                <p>By {singlePost.author}</p>
+                {singlePost.categories.map((category, index) => (
+                    <ul key={index}>
+                        <li>{category.title}</li>
+                    </ul>
+                ))}
+                {singlePost.mainImage ? <img src={singlePost.mainImage.asset.url} alt={singlePost.mainImage.alt} /> : "No picture"}
                 <BlockContent blocks={singlePost.body} projectId="ewz4ezcb" dataset="production" />
             </article>
         }
@@ -19,8 +30,6 @@ export async function getStaticPaths(context) {
     try {
         const allPosts = await client.fetch(`
         *[ _type == "post" ] {
-            title,
-            body,
             slug
         }
         `)
@@ -49,7 +58,17 @@ export async function getStaticProps(context) {
         const singlePost = await client.fetch(`
         *[slug.current == "${slug}"][0] {
             title,
-            body
+            body,
+            publishedAt,
+            "author": author->name,
+            categories[] -> { title },
+            mainImage{
+                asset->{
+                    _id,
+                    url
+                },
+                alt
+            }
         }
         `)
         // Check if the object is empty, and if not return the data

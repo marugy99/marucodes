@@ -1,8 +1,13 @@
 @use 'variables';
 
 
-h1, p, .title {
+body {
     color: variables.$textColor;
     text-decoration: none;
     font-family: monospace;
-  }
+}
+
+img {
+    width: 400px;
+    height: auto;
+}

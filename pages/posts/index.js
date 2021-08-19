@@ -1,6 +1,7 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react"
 import Link from "next/link"
+import { formatDate } from "../../functions/coolFunctions";
 
 const Posts = ({ postsData }) => {
     return (
@@ -11,6 +12,13 @@ const Posts = ({ postsData }) => {
                         <a>
                             <article>
                                 <h1>{post.title}</h1>
+                                <p>{formatDate(post.publishedAt)}</p>
+                                <p>By {post.author}</p>
+                                {post.categories.map((category, index) => (
+                                    <ul key={index}>
+                                        <li>{category.title}</li>
+                                    </ul>
+                                ))}
                                 <BlockContent blocks={post.body} projectId="ewz4ezcb" dataset="production" />
                             </article>
                         </a>
@@ -28,7 +36,10 @@ export async function getStaticProps(context) {
         *[ _type == "post" ] {
             title,
             body,
-            slug
+            slug,
+            publishedAt,
+            "author": author->name,
+            categories[] -> { title }
         }
         `)
         // Check if the object is empty, and if not return the data
