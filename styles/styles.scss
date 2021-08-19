@@ -1,5 +1,8 @@
-.title {
-    color: #bf37a4;
+@use 'variables';
+
+
+h1, p, .title {
+    color: variables.$textColor;
     text-decoration: none;
     font-family: monospace;
   }
