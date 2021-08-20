@@ -4,8 +4,8 @@ const Layout = ({ children }) => {
 
     return ( 
         <section className="main-card">
+            <Navbar />
             <div className="content">
-                <Navbar />
                 <main>
                     {children}
                 </main>

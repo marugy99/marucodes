@@ -11,8 +11,8 @@ export default function Home() {
         <h1>Call <span className="text-stroke">me</span> Maru</h1>
       </header>
 
-      <p>👋  I'm a self-taught front-end developer who is passionate about learning new technologies & building things. As an art and design enthusiast, I truly love bringing ideas to life in the form of beautiful and responsive websites.</p>
-      <p>My name is María Eugenia (she/her) but most people call me Maru. During my free time I enjoy playing videogames and filming silly videos. 🎬 </p>
+      <p>👋  I'm a  self-taught <span className="bolder">front-end developer</span> who is passionate about learning new technologies & building things. As an art and design enthusiast, I truly love bringing ideas to life in the form of beautiful and responsive websites.</p>
+      <p>My name is María Eugenia <span className="bolder">(she/her)</span> but most people call me Maru. During my free time I enjoy playing videogames and filming silly videos. 🎬 </p>
 
       <div className="skills">
         <h2>Skills</h2>
