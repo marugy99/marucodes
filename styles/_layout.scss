@@ -1,5 +1,9 @@
 @use 'variables';
 
+// Styles for the layout component
+
+// Navigation bar styles
+
 nav {
     display: flex;
     justify-content: center;
@@ -41,14 +45,26 @@ nav {
     }
 }
 
+// Main card style (glassmorphism) and padding for inner content
+
 .main-card {
     background-color: rgba(255, 255, 255, 0.5);
     width: 75%;
     margin: 0 auto;
     border-radius: 20px;
     position: relative;
+    min-height: 90vh;
 }
 
 .content {
-    padding: 1rem 3rem 3rem 3rem;
+    padding: 1rem 3rem 1rem 3rem;
+}
+
+// Footer styles
+
+footer {
+    color: var(--footerTxt);
+    margin: 2rem 0;
+    font-size: 1rem;
+    text-align: center;
 }

@@ -1,18 +1,22 @@
 :root {
     --black: #1c1c1c;
-    --gradientPrimary: #66cec7;
+    --gradientPrimary: #5dc9c2;
     --gradientSecondary: #f5ff89;
     --accentPrimary: #66cec7;
     --accentSecondary: #f2c234;
     --accentBlue: #2EB7E2;
     --hr: white;
+    --footerBg: white;
+    --footerTxt: #1c1c1c;
 }
 
 .dark-mode {
     --black: #1a1a1a;
-    --gradientPrimary: #007871;
+    --gradientPrimary: #036d68;
     --gradientSecondary: #782465;
     --accentPrimary: #007871;
     --accentSecondary: #782465;
     --hr: #782465;
+    --footerBg: #1a1a1a;
+    --footerTxt: white;
 }

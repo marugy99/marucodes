@@ -46,6 +46,25 @@ header {
     }
 }
 
+.wave {
+    animation: wave 1s infinite;
+    display: inline-block;
+    font-size: 1.5rem;
+  }
+
+@keyframes wave {
+0% {
+    transform: rotate(15deg);
+}
+50% {
+    transform: rotate(-15deg);
+}
+100% {
+    transform: rotate(15deg);
+}
+}
+  
+
 .bolder {
     font-weight: 500;
 }
