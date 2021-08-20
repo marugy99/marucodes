@@ -1,0 +1,47 @@
+@use 'variables';
+
+.text-stroke {
+    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: var(--black);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+
+    p {
+        margin-bottom: 0px;
+    }
+
+    img {
+        width: 150px;
+        height: auto;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+    }
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            margin-right: 2rem;
+            list-style: none;
+            &:not(:first-child):before {
+                content: "\25CF";
+                color: var(--accentSecondary);
+                display: inline-block;
+                margin-right: 1rem;
+            }
+        }
+    }
+}

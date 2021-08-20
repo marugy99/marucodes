@@ -1,0 +1,50 @@
+@use 'variables';
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&family=Roboto&display=swap");
+
+*::selection {
+    background-color: var(--gradientPrimary);
+}
+
+body {
+    font-family: "Roboto", monospace;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    color: var(--black);
+    background: linear-gradient(
+    90deg,
+    var(--gradientPrimary),
+    var(--gradientSecondary)
+  );
+    // cursor: url(images/cursor.svg), auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+  
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+p {
+    margin: 0.8rem;
+  }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

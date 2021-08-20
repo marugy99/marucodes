@@ -1,1 +1,18 @@
-$textColor: #ab348f;
+:root {
+    --black: #171717;
+    --gradientPrimary: #66cec7;
+    --gradientSecondary: #f5ff89;
+    --accentPrimary: #66cec7;
+    --accentSecondary: #f2c234;
+    --accentBlue: #2EB7E2;
+    --hr: white;
+}
+
+.dark-mode {
+    --black: #171717;
+    --gradientPrimary: #007871;
+    --gradientSecondary: #782465;
+    --accentPrimary: #007871;
+    --accentSecondary: #782465;
+    --hr: #782465;
+}

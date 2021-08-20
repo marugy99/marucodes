@@ -1,0 +1,52 @@
+@use 'variables';
+
+nav {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-bottom: 3px solid var(--hr);
+    width: 100%;
+
+    ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        
+        li {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        li:not(:last-child) {
+            margin-right: 3rem;
+        }
+    }
+
+    button {
+        display: block;
+        position: absolute;
+        right: 0px;
+        top: 5px;
+        background-color: transparent;
+        border: none;
+        height: 40px;
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+        
+    }
+}
+
+.main-card {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+}
+
+.content {
+    padding: 1rem 3rem 3rem 3rem;
+}

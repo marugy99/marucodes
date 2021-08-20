@@ -1,16 +1,30 @@
-import Head from 'next/head'
-// import styles from '../styles/Home.module.css'
+import Header from "../components/Header"
 
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>Maru Codes 2.0</title>
-        <meta name="description" content="Personal website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <section>
+      <Header title="Call me Maru"/>
 
-      <h1 className="title">Maru Codes 2.0</h1>
-    </div>
+      <header>
+        <img src="/Maru.jpeg" alt="Maru profile pic" />
+        <p>Hi. Hola. Olá</p>
+        <h1>Call <span className="text-stroke">me</span> Maru</h1>
+      </header>
+
+      <p>👋  I'm a self-taught front-end developer who is passionate about learning new technologies & building things. As an art and design enthusiast, I truly love bringing ideas to life in the form of beautiful and responsive websites.</p>
+      <p>My name is María Eugenia (she/her) but most people call me Maru. During my free time I enjoy playing videogames and filming silly videos. 🎬 </p>
+
+      <div className="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Git</li>
+          <li>Responsive Design</li>
+        </ul>
+      </div>
+    </section>
   )
 }
