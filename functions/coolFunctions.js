@@ -6,3 +6,5 @@ export const formatDate = (date) => {
         year: 'numeric'
     })
 }
+
+export const checkObj = (obj) => Object.keys(obj).length === 0 && obj.constructor === Object;

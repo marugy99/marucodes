@@ -1,7 +1,7 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react"
 import Link from "next/link"
-import { formatDate } from "../../functions/coolFunctions";
+import { checkObj, formatDate } from "../../functions/coolFunctions";
 
 const Posts = ({ postsData }) => {
     return (
@@ -43,7 +43,7 @@ export async function getStaticProps(context) {
         }
         `)
         // Check if the object is empty, and if not return the data
-        if (Object.keys(postsData).length === 0 && postsData.constructor === Object) {
+        if (checkObj(postsData)) {
             return {
                 notFound: true
             }

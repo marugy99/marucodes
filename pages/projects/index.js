@@ -1,9 +1,8 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react"
-
+import { checkObj } from "../../functions/coolFunctions";
 
 const Projects = ({ projectsData }) => {
-    console.log(projectsData)
     return ( 
         <section>
             <h1>My projects</h1>
@@ -50,7 +49,7 @@ export async function getStaticProps(context) {
         }
         `)
         // Check if the object is empty, and if not return the data
-        if (Object.keys(projectsData).length === 0 && projectsData.constructor === Object) {
+        if (checkObj(projectsData)) {
             return {
                 notFound: true
             }
