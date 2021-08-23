@@ -1,9 +1,9 @@
-import Header from "../components/Header"
+import Head from "../components/Head"
 
 export default function Home() {
   return (
     <section>
-      <Header title="Call me Maru"/>
+      <Head title="Call me Maru"/>
 
       <header>
         <img src="/Maru.jpeg" alt="Maru profile pic" />

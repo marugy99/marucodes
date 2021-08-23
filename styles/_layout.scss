@@ -16,10 +16,18 @@ nav {
         list-style: none;
         margin: 0;
         padding-left: 0px;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
         
         li {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding: 5px;
+            border-radius: 10px;
+            transition: all 400ms linear;
+            cursor: pointer;
+            &:hover {
+                background-color: var(--accentPrimary);
+                color: var(--footerTxt);
+            }
         }
 
         li:not(:last-child) {
@@ -34,7 +42,12 @@ nav {
         top: 10px;
         background-color: transparent;
         border: none;
-        height: 40px;
+        height: auto;
+        transition: all 300ms linear;
+
+        &:active {
+            transform: scale(1.3);
+        }
 
         svg {
             width: 40px;
@@ -64,7 +77,29 @@ nav {
 
 footer {
     color: var(--footerTxt);
-    margin: 2rem 0;
+    margin-top: 1rem;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+
+    div {
+        display: flex;
+    }
+
+    a {
+        font-size: 1.7rem;
+        display: flex;
+        align-items: center;
+        
+        &:hover {
+            color: var(--accentIcons);
+            transition: color 400ms ease-in-out;
+        }
+    }
+    
+    a:not(:last-child) {
+        margin-right: 1rem;
+    }
 }

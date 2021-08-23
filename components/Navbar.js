@@ -44,18 +44,18 @@ const Navbar = () => {
             }
             </button>
             <ul>
-                <li>
-                    <Link href="/"><a>About</a></Link>
-                </li>
-                <li>
-                    <Link href="/projects"><a>Projects</a></Link>
-                </li>
-                <li>
-                    <Link href="/posts"><a>Journal</a></Link>
-                </li>
-                <li>
-                    <Link href="/posts"><a>Contact</a></Link>
-                </li>
+                <Link href="/">
+                    <li><a>About</a></li>
+                </Link>
+                <Link href="/projects">
+                    <li><a>Projects</a></li>
+                </Link>
+                <Link href="/posts">
+                    <li><a>Journal</a></li>
+                </Link>
+                <Link href="/posts">
+                    <li><a>Contact</a></li>
+                </Link>
             </ul>
         </nav>
      );

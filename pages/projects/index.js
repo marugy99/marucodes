@@ -11,9 +11,9 @@ const Projects = ({ projectsData }) => {
                     <article key={index}>
                         <h2>{project.title}</h2>
                         <BlockContent blocks={project.description} projectId="ewz4ezcb" dataset="production" />
-                        <a href={project.link}>Live site</a>
+                        <a href={project.link} rel="noreferrer" target="_blank">Live site</a>
                         <br />
-                        <a href={project.repo}>Repository</a>
+                        <a href={project.repo} rel="noreferrer" target="_blank">Repository</a>
                         {
                             project.stack.map((proj, index) => (
                                 <ul key={index}>
