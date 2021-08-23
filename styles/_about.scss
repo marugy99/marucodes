@@ -22,6 +22,16 @@ header {
         border-radius: 50%;
         margin-bottom: 1rem;
     }
+
+    @media (max-width: 700px) {
+        img {
+            width: 100px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    }
 }
 
 .skills {
@@ -32,16 +42,51 @@ header {
     ul {
         display: flex;
         flex-wrap: wrap;
+        padding-left: 0px;
 
         li {
-            margin-right: 2rem;
             list-style: none;
+            
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+
             &:not(:first-child):before {
                 content: "\25CF";
                 color: var(--accentSecondary);
                 display: inline-block;
                 margin-right: 1rem;
             }
+        }
+    }
+
+    @media (max-width: 1100px) {
+
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    
+        li {
+            margin-right: 0px;
+            margin-bottom: 1rem;
+    
+            &:before {
+                content: "\25CF";
+                color: var(--accentSecondary);
+                display: inline-block;
+                margin-right: 0.8rem;
+            }
+        }
+    }
+
+    @media (max-width: 700px) {
+        ul {
+            grid-template-columns: 1fr;
+        }
+
+        li {
+            font-size: 1rem;
         }
     }
 }
