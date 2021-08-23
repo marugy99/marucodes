@@ -3,7 +3,7 @@ import Head from "../components/Head"
 export default function Home() {
   return (
     <section>
-      <Head title="Call me Maru"/>
+      <Head title="About"/>
 
       <header>
         <img src="/Maru.jpeg" alt="Maru profile pic" />

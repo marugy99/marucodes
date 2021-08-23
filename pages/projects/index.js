@@ -1,10 +1,12 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react"
 import { checkObj } from "../../functions/coolFunctions";
+import Head from "../../components/Head";
 
 const Projects = ({ projectsData }) => {
     return ( 
         <section>
+            <Head title="Projects"/>
             <h1>My projects</h1>
             {
                 projectsData.map((project, index) => (

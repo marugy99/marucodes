@@ -2,13 +2,15 @@ import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react"
 import Link from "next/link"
 import { checkObj, formatDate } from "../../functions/coolFunctions";
+import Head from "../../components/Head";
 
 const Posts = ({ postsData }) => {
     return (
         <>
+            <Head title="Journal"/>
             {
                 postsData && postsData.map((post, index) => (
-                    <Link href={`/posts/${post.slug.current}`} key={index}>
+                    <Link href={`/journal/${post.slug.current}`} key={index}>
                         <a>
                             <article>
                                 <h1>{post.title}</h1>
