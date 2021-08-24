@@ -18,6 +18,7 @@ nav {
         padding-left: 0px;
         padding-top: 0.8rem;
         padding-bottom: 0.8rem;
+        text-align: center;
         
         li {
             padding: 5px;
@@ -56,7 +57,53 @@ nav {
             fill: var(--accentPrimary)
         }
         
+    } 
+}
+
+.ham-menu {
+    display: none;
+}
+
+.navBorder {
+    border-bottom: 3px solid var(--hr);
+}
+
+@media (max-width: 700px) {
+
+    nav {
+
+        border: none;
+
+        .showMenu li:not(:last-child) {
+            margin-right: 0px;
+        }
+
     }
+
+
+    .ham-menu {
+        display: block;
+    }
+
+    .ham-details {
+        display: none;
+        font-size: 1rem;
+
+        ul {
+            flex-direction: column;
+        }
+
+        button {
+            left: 10px;
+            height: 40px;
+        }
+
+    }
+    
+}
+
+.showMenu {
+    display: block;
 }
 
 // Main card style (glassmorphism) and padding for inner content
