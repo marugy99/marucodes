@@ -31,7 +31,7 @@ const Navbar = () => {
                 }
             </button>
 
-            <div className={`${toggleMenu ? "showMenu" : ""} ham-details`}>
+            <div className={`${toggleMenu ? "show-menu" : ""} ham-details`}>
 
                 <button onClick={changeTheme} className="theme-toggle">
                 
