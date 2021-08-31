@@ -10,7 +10,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
 
     p {
         margin-bottom: 0px;
@@ -40,42 +39,22 @@ header {
     align-items: center;
 
     ul {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        place-items: center;
+        grid-template-columns: auto auto;
         padding-left: 0px;
+        grid-column-gap: 4rem;
 
         li {
             list-style: none;
-            
-            &:not(:last-child) {
-                margin-right: 2rem;
-            }
-
-            &:not(:first-child):before {
-                content: "\25CF";
-                color: var(--accentSecondary);
-                display: inline-block;
-                margin-right: 1rem;
-            }
-        }
-    }
-
-    @media (max-width: 1100px) {
-
-        ul {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-    
-        li {
             margin-right: 0px;
             margin-bottom: 1rem;
-    
+
             &:before {
                 content: "\25CF";
                 color: var(--accentSecondary);
                 display: inline-block;
-                margin-right: 0.8rem;
+                margin-right: 1rem;
             }
         }
     }
