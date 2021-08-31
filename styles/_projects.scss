@@ -1,0 +1,57 @@
+#projects {
+
+    header {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    svg {
+        fill: var(--accentPrimary);
+        width: 70px;
+        height: 70px;
+        display: block;
+        margin-left: -20px;
+    }
+
+    h1 {
+        display: block;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        margin-left: 0;
+        max-width: 550px;
+        
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    img {
+        width: 40%;
+        height: auto;
+        filter: brightness(0.8) saturate(150%) contrast(120%) hue-rotate(30deg) grayscale(1);
+        transition: all 300ms ease-in-out;
+        margin: 0 1rem;
+
+        &:hover {
+            filter: none;
+        }
+    }
+
+    .project-tile {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        background-color: rgba(255, 255, 255, 0.4);
+        padding: 1rem;
+        border-radius: 20px;
+    }
+}
