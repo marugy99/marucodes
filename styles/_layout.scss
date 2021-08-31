@@ -74,14 +74,19 @@ nav {
 .main-card {
     background-color: rgba(255, 255, 255, 0.5);
     max-width: 70rem;
-    min-height: 42rem;
-    margin: 0 2rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    margin-left: 2rem;
+    margin-right: 2rem;
     border-radius: 20px;
     position: relative;
 }
 
 .content {
-    padding: 1rem 3rem 1rem 3rem;
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    min-height: 82vh;
 }
 
 @media (max-width: 700px) {
@@ -95,7 +100,7 @@ nav {
 
 footer {
     color: var(--footerTxt);
-    margin: 1rem 1rem 0 1rem;
+    margin: 0.5rem 1rem;
     font-size: 1rem;
     display: flex;
     flex-wrap: wrap;
