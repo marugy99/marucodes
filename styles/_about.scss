@@ -1,94 +1,101 @@
 @use 'variables';
 
 .text-stroke {
-    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 2.5px;
-    -webkit-text-stroke-color: var(--black);
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2.5px;
+  -webkit-text-stroke-color: var(--black);
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    p {
-        margin-bottom: 0px;
-    }
+  p {
+    margin-bottom: 0px;
+  }
 
+  img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 700px) {
     img {
-        width: 150px;
-        height: auto;
-        border-radius: 50%;
-        margin-bottom: 1rem;
+      width: 100px;
     }
 
-    @media (max-width: 700px) {
-        img {
-            width: 100px;
-        }
-
-        h1 {
-            text-align: center;
-        }
+    h1 {
+      text-align: center;
     }
+  }
 }
 
 .skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ul {
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto auto;
+    padding-left: 0px;
+    grid-column-gap: 4rem;
+    width: 50%;
+    margin-bottom: 0px;
+
+    li {
+      list-style: none;
+      margin-right: 0px;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    ul {
+      grid-template-columns: 1fr;
+    }
+
+    li {
+      font-size: 1rem;
+    }
+  }
+
+  div {
     display: flex;
-    flex-direction: column;
     align-items: center;
 
-    ul {
-        display: grid;
-        place-items: center;
-        grid-template-columns: auto auto;
-        padding-left: 0px;
-        grid-column-gap: 4rem;
-
-        li {
-            list-style: none;
-            margin-right: 0px;
-            margin-bottom: 1rem;
-
-            &:before {
-                content: "\25CF";
-                color: var(--accentSecondary);
-                display: inline-block;
-                margin-right: 1rem;
-            }
-        }
+    svg {
+      fill: var(--accentPrimary);
+      width: 70px;
+      height: 70px;
+      display: block;
+      margin-left: -70px;
     }
-
-    @media (max-width: 700px) {
-        ul {
-            grid-template-columns: 1fr;
-        }
-
-        li {
-            font-size: 1rem;
-        }
-    }
+  }
 }
 
 .wave {
-    animation: wave 1s infinite;
-    display: inline-block;
-    font-size: 1.5rem;
-  }
+  display: inline-block;
+  font-size: 1.5rem;
+  animation: wave 1s infinite;
+}
 
 @keyframes wave {
-0% {
+  0% {
     transform: rotate(15deg);
-}
-50% {
+  }
+  50% {
     transform: rotate(-15deg);
-}
-100% {
+  }
+  100% {
     transform: rotate(15deg);
+  }
 }
-}
-  
 
 .bolder {
-    font-weight: 500;
+  font-weight: 500;
 }
