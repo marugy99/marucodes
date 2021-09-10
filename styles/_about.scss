@@ -16,7 +16,7 @@ header {
   }
 
   img {
-    width: 150px;
+    width: 140px;
     height: auto;
     border-radius: 50%;
     margin-bottom: 1rem;
@@ -43,14 +43,13 @@ header {
     place-items: center;
     grid-template-columns: auto auto;
     padding-left: 0px;
-    grid-column-gap: 4rem;
-    width: 50%;
+    grid-column-gap: 8rem;
     margin-bottom: 0px;
 
     li {
       list-style: none;
       margin-right: 0px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
   }
 
