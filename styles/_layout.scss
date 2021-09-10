@@ -5,206 +5,201 @@
 // Navigation bar styles
 
 nav {
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid var(--hr);
+  width: 100%;
+
+  ul {
     display: flex;
-    justify-content: center;
-    border-bottom: 3px solid var(--hr);
-    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding-left: 0px;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    text-align: center;
 
-    ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding-left: 0px;
-        padding-top: 0.8rem;
-        padding-bottom: 0.8rem;
-        text-align: center;
-        
-        li {
-            padding: 5px;
-            border-radius: 10px;
-            transition: all 400ms linear;
-            cursor: pointer;
-            &:hover {
-                background-color: var(--accentPrimary);
-                color: var(--footerTxt);
-            }
-        }
-
-        a:not(:last-child) {
-            margin-right: 3rem;
-        }
+    li {
+      padding: 5px;
+      border-radius: 10px;
+      transition: all 400ms linear;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--accentPrimary);
+        color: var(--footerTxt);
+      }
     }
 
-    button {
-        display: block;
-        background-color: transparent;
-        position: absolute;
-        border: none;
-        height: auto;
-        cursor: pointer;
-        transition: all 300ms linear;
-        
-        &:active {
-            transform: scale(1.3);
-        }
-        
-        svg {
-            fill: var(--accentPrimary)
-        }
-        
+    a:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+
+  button {
+    display: block;
+    background-color: transparent;
+    position: absolute;
+    border: none;
+    height: auto;
+    cursor: pointer;
+    transition: all 300ms linear;
+
+    &:active {
+      transform: scale(1.3);
     }
 
-    .theme-toggle {
-        right: 20px;
-        top: 10px;
-
-        svg {
-            width: 40px;
-            height: 40px;
-        }
+    svg {
+      fill: var(--accentPrimary);
     }
+  }
+
+  .theme-toggle {
+    right: 20px;
+    top: 10px;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
 }
 
-.ham-menu { // Hide hamburger menu by default
-    display: none;
+.ham-menu {
+  // Hide hamburger menu by default
+  display: none;
 }
 
 // Main card style (glassmorphism) and padding for inner content
 
 .main-card {
-    background-color: rgba(255, 255, 255, 0.5);
-    max-width: 70rem;
-    margin-top: 1rem;
-    margin-bottom: 0;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    border-radius: 20px;
-    position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 70rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border-radius: 20px;
+  position: relative;
 }
 
 .content {
-    padding: 1rem 3rem;
-    display: flex;
-    align-items: center;
-    min-height: 82vh;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  min-height: 78vh;
 }
 
 @media (max-width: 700px) {
-
-    .content {
-        padding: 1rem 2rem 1rem 2rem;
-    }
+  .content {
+    padding: 1rem 2rem 1rem 2rem;
+  }
 }
 
 // Footer styles
 
 footer {
-    color: var(--footerTxt);
-    margin: 0.5rem 1rem;
-    font-size: 1rem;
+  color: var(--footerTxt);
+  margin: 0.5rem 1rem;
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  div {
     display: flex;
-    flex-wrap: wrap;
+  }
+
+  a {
+    font-size: 1.7rem;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
 
-    div {
-        display: flex;
+    &:hover {
+      color: var(--accentIcons);
+      transition: color 400ms ease-in-out;
     }
+  }
 
-    a {
-        font-size: 1.7rem;
-        display: flex;
-        align-items: center;
-        
-        &:hover {
-            color: var(--accentIcons);
-            transition: color 400ms ease-in-out;
-        }
-    }
-    
-    a:not(:last-child) {
-        margin-right: 1rem;
-    }
+  a:not(:last-child) {
+    margin-right: 1rem;
+  }
 }
 
 // Media queries
 
 @media (max-width: 700px) {
+  .main-card {
+    margin: 1rem;
+  }
 
-    .main-card {
-        margin: 1rem;
+  nav {
+    border: none;
+
+    .show-menu a:not(:last-child) {
+      margin-right: 0px;
     }
 
-    nav {
+    .show-menu {
+      // When the mobile menu is toggle, links appear covering all the content
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: var(--menuBg);
+      color: var(--footerTxt);
+      border-radius: 20px;
+      z-index: 10;
+      animation: fade 400ms ease-in-out;
 
-        border: none;
-
-        .show-menu a:not(:last-child) {
-            margin-right: 0px;
-        }
-
-        .show-menu { // When the mobile menu is toggle, links appear covering all the content
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: var(--menuBg);
-            color: var(--footerTxt);
-            border-radius: 20px;
-            z-index: 10;
-            animation: fade 400ms ease-in-out;
-
-            a:not(:first-child) {
-                margin-top: 1rem;
-            }
-        }
-
-        @keyframes fade {
-            0% {
-              opacity: 0;
-            }
-            100% {
-              opacity: 1;
-            }
-        }
+      a:not(:first-child) {
+        margin-top: 1rem;
+      }
     }
 
-    // When reached 700px, hide menu and show hamburger icon
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
 
-    .ham-menu { 
-        display: block;
-        right: 20px;
-        top: 10px;
-        z-index: 20;
+  // When reached 700px, hide menu and show hamburger icon
 
-        svg {
-            width: 40px;
-            height: 40px;
-        }
+  .ham-menu {
+    display: block;
+    right: 20px;
+    top: 10px;
+    z-index: 20;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .ham-details {
+    display: none;
+    font-size: 1rem;
+
+    ul {
+      flex-direction: column;
     }
 
-    .ham-details { 
-        display: none;
-        font-size: 1rem;
+    .theme-toggle {
+      left: 20px;
+      top: 15px;
 
-        ul {
-            flex-direction: column;
-        }
-
-        .theme-toggle {
-            left: 20px;
-            top: 15px;
-
-            svg {
-                width: 30px;
-                height: 30px;
-            }
-        }
-
+      svg {
+        width: 30px;
+        height: 30px;
+      }
     }
-
-
+  }
 }
