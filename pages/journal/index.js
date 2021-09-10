@@ -16,11 +16,11 @@ const Posts = ({ postsData }) => {
                                 <h1>{post.title}</h1>
                                 <p>{formatDate(post.publishedAt)}</p>
                                 <p>By {post.author}</p>
+                                <ul>
                                 {post.categories.map((category, index) => (
-                                    <ul key={index}>
-                                        <li>{category.title}</li>
-                                    </ul>
+                                    <li key={index}>{category.title}</li>
                                 ))}
+                                </ul>
                                 <BlockContent blocks={post.body} projectId="ewz4ezcb" dataset="production" />
                             </article>
                         </a>

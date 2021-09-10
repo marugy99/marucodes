@@ -20,8 +20,8 @@ const Projects = ({ projectsData }) => {
                             <ul>
                                 {
                                     project.stack.map((proj, index) => (
-                                            <li key={index}>{proj}</li>
-                                            ))
+                                        <li key={index}>{proj}</li>
+                                    ))
                                 }
                             </ul>
                             <BlockContent blocks={project.description} projectId="ewz4ezcb" dataset="production" />
