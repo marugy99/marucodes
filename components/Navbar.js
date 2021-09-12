@@ -1,29 +1,53 @@
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { IoIosMenu, IoIosClose, IoMdSunny, IoMdMoon } from "react-icons/io";
 
 const Navbar = () => {
 
+    // Dark mode functionality
     const [darkMode, setDarkMode] = useState(false);
-    const [toggleMenu, setToggleMenu] = useState(false);
 
+    const enableDarkMode = () => {
+        document.body.classList.add("dark-mode");
+        setDarkMode(true);
+    }
+
+    const disableDarkMode = () => {
+        document.body.classList.remove("dark-mode");
+        setDarkMode(false);
+    }
+    
+    // Function used onClick to toggle dark mode
     const changeTheme = () => {
 
         if (!darkMode) {
-            document.body.classList.add("dark-mode");
-            setDarkMode(true);
+            enableDarkMode();
+            localStorage.setItem("darkMode", "enabled");
         } else {
-            document.body.classList.remove("dark-mode");
-            setDarkMode(false);
+            disableDarkMode();
+            localStorage.setItem("darkMode", "disabled")
         }
     }
+
+    // Checkes local storage to see if dark mode was activated
+    useEffect(() => {
+        const checkTheme = localStorage.getItem("darkMode");
+        if (checkTheme === "enabled") {
+            enableDarkMode();
+        }
+    }, [])
+
+    // Toggle menu functionality (hambuger menu)
+
+    const [toggleMenu, setToggleMenu] = useState(false);
 
     const changeToggle = () => {
         setToggleMenu(!toggleMenu)
     }
 
     return ( 
-        <nav>
+        <nav className="main-nav">
+            
              <button onClick={changeToggle} className="ham-menu">
                 {!toggleMenu 
                     ? <IoIosMenu />
@@ -31,15 +55,8 @@ const Navbar = () => {
                 }
             </button>
 
-            <div className={`${toggleMenu ? "show-menu" : ""} ham-details`}>
+            <div className={`${toggleMenu ? "show-menu" : ""} menu-details`}>
 
-                <button onClick={changeTheme} className="theme-toggle">
-                
-                {!darkMode
-                    ? <IoMdSunny />
-                    : <IoMdMoon  />
-                }
-                </button>
                 <ul>
                     <Link href="/">
                         <a onClick={changeToggle}><li>About</li></a>
@@ -54,6 +71,13 @@ const Navbar = () => {
                         <a onClick={changeToggle}><li>Contact</li></a>
                     </Link>
                 </ul>
+
+                <button onClick={changeTheme} className="theme-toggle">
+                    {!darkMode
+                        ? <IoMdSunny />
+                        : <IoMdMoon  />
+                    }
+                </button>
             </div>
         </nav>
      );
