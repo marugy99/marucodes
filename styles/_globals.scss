@@ -2,26 +2,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&family=Roboto:wght@300;500&display=swap");
 
 *::selection {
-    background-color: var(--gradientPrimary);
+  background-color: var(--gradientPrimary);
 }
 
 body {
-    font-family: "Roboto", monospace;
-    font-weight: 300;
-    line-height: 1.5;
-    font-size: 1.2rem;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    //align-items: center;
-    //min-height: 100vh;
-    color: var(--black);
-    background: linear-gradient(
+  font-family: "Roboto", monospace;
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  color: var(--black);
+  background: linear-gradient(
     90deg,
     var(--gradientPrimary),
     var(--gradientSecondary)
   );
-    // cursor: url(images/cursor.svg), auto;
+  // cursor: url(images/cursor.svg), auto;
 }
 
 h1,
@@ -33,39 +31,43 @@ h4 {
 }
 
 h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
+  font-size: 3.5rem;
+  font-weight: 800;
 }
-  
+
 h2 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 h3 {
-    font-size: 2rem;
-    text-align: center;
+  font-size: 2rem;
+  text-align: center;
 }
 
 p {
-    margin: 0.8rem;
-    text-align: justify;
+  margin: 0.8rem;
+  text-align: justify;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
 }
 
 @media (max-width: 700px) {
-    h1 {
-        font-size: 2.5rem;
-    }
+  h1 {
+    font-size: 2.5rem;
+  }
 
-    h2 {
-        font-size: 2rem;
-    }
+  h2 {
+    font-size: 2rem;
+  }
 
-    p {
-        font-size: 1rem;
-    }
+  p {
+    font-size: 1rem;
+  }
 }

@@ -1,8 +1,10 @@
 #projects {
   header {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+    div {
+      // Align page title with arrow svg
+      display: flex;
+      align-items: center;
+    }
   }
 
   svg {
@@ -13,23 +15,21 @@
     margin-left: -20px;
   }
 
-  h1 {
-    display: block;
-  }
-
   h2 {
     font-size: 2rem;
   }
 
   ul {
-    list-style: none;
     margin: 0.5rem 0;
     padding-left: 0;
     display: flex;
 
     li {
-      margin-right: 1rem;
       font-size: 1rem;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
 
       &:not(:first-child):before {
         content: "\0025CF  ";
@@ -39,30 +39,15 @@
     }
   }
 
-  .project-links {
-    svg {
-      width: 30px;
-    }
-
-    div {
-      display: flex;
-    }
-
-    a {
-      margin-right: 1rem;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-    }
-  }
-
   img {
-    width: 40%;
+    width: 350px;
     height: auto;
-    filter: grayscale(1);
-    transition: all 300ms ease-in-out;
-    margin: 0 1rem;
+    filter: grayscale(1) brightness(0.85) contrast(1.2);
+    margin-left: 1rem;
     border-radius: 10px;
+    display: block;
+    position: relative;
+    transition: all 300ms ease-in-out;
 
     &:hover {
       filter: none;
@@ -72,15 +57,91 @@
   .project-tile {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-    background-color: rgba(255, 255, 255, 0.4);
+    margin: 2rem 0;
+    background-color: rgba(255, 255, 255, 0.35);
     padding: 1rem;
     border-radius: 20px;
 
     p {
       margin-left: 0;
-      max-width: 550px;
+      max-width: 500px;
+      font-size: 1rem;
+    }
+  }
+
+  .project-links {
+    display: flex;
+    margin-left: 1rem;
+    margin-top: 1.2rem;
+
+    svg {
+      width: 25px;
+      height: auto;
+      margin-right: 5px;
+      margin-bottom: 2px;
+    }
+
+    a {
+      margin-right: 4rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      transition: all 300ms ease-in-out;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  #projects {
+    .project-tile {
+      flex-direction: column;
+      text-align: center;
+
+      p {
+        margin-right: 0px;
+      }
+    }
+
+    ul {
+      justify-content: center;
+    }
+
+    .project-links {
+      justify-content: space-evenly;
+      margin-bottom: 1rem;
+
+      a {
+        margin-right: 0px;
+      }
+
+      svg {
+        margin-left: 0px;
+      }
+    }
+
+    img {
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  #projects img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 375px) {
+  #projects {
+    ul li,
+    .project-tile p,
+    .project-links a,
+    p {
+      font-size: 0.8rem;
     }
   }
 }

@@ -4,7 +4,7 @@
 
 // Navigation bar styles
 
-nav {
+.main-nav {
   display: flex;
   justify-content: center;
   border-bottom: 3px solid var(--hr);
@@ -62,11 +62,10 @@ nav {
       height: 40px;
     }
   }
-}
-
-.ham-menu {
-  // Hide hamburger menu by default
-  display: none;
+  .ham-menu {
+    // Hide hamburger menu by default
+    display: none;
+  }
 }
 
 // Main card style (glassmorphism) and padding for inner content
@@ -84,9 +83,9 @@ nav {
 
 .content {
   padding: 1rem 3rem;
+  min-height: 80vh;
   display: flex;
   align-items: center;
-  min-height: 78vh;
 }
 
 @media (max-width: 700px) {
@@ -134,8 +133,12 @@ footer {
     margin: 1rem;
   }
 
-  nav {
+  .main-nav {
     border: none;
+
+    li {
+      font-size: 1.5rem;
+    }
 
     .show-menu a:not(:last-child) {
       margin-right: 0px;
@@ -168,23 +171,22 @@ footer {
         opacity: 1;
       }
     }
-  }
 
-  // When reached 700px, hide menu and show hamburger icon
+    // When reached 700px, hide menu and show hamburger icon
+    .ham-menu {
+      display: block;
+      right: 20px;
+      top: 10px;
+      z-index: 20;
 
-  .ham-menu {
-    display: block;
-    right: 20px;
-    top: 10px;
-    z-index: 20;
-
-    svg {
-      width: 40px;
-      height: 40px;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 
-  .ham-details {
+  .menu-details {
     display: none;
     font-size: 1rem;
 

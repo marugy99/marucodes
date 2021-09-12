@@ -6,73 +6,75 @@
   -webkit-text-stroke-color: var(--black);
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#about {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  p {
-    margin-bottom: 0px;
-  }
-
-  img {
-    width: 140px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
-
-  @media (max-width: 700px) {
-    img {
-      width: 100px;
+    p {
+      margin-bottom: 0px;
     }
 
-    h1 {
-      text-align: center;
+    img {
+      width: 140px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ul {
+      display: grid;
+      place-items: center;
+      grid-template-columns: auto auto;
+      padding-left: 0px;
+      grid-column-gap: 8rem;
+      margin-bottom: 0px;
+
+      li {
+        margin-right: 0px;
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    div {
+      // Align page title with arrow svg
+      display: flex;
+      align-items: center;
+
+      svg {
+        fill: var(--accentPrimary);
+        width: 70px;
+        height: 70px;
+        display: block;
+        margin-left: -70px;
+      }
     }
   }
 }
 
-.skills {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  ul {
-    display: grid;
-    place-items: center;
-    grid-template-columns: auto auto;
-    padding-left: 0px;
-    grid-column-gap: 8rem;
-    margin-bottom: 0px;
-
-    li {
-      list-style: none;
-      margin-right: 0px;
-      margin-bottom: 0.8rem;
-    }
-  }
-
-  @media (max-width: 700px) {
-    ul {
+@media (max-width: 700px) {
+  #about {
+    .skills ul {
       grid-template-columns: 1fr;
     }
 
     li {
       font-size: 1rem;
     }
-  }
 
-  div {
-    display: flex;
-    align-items: center;
+    header img {
+      width: 100px;
+    }
 
-    svg {
-      fill: var(--accentPrimary);
-      width: 70px;
-      height: 70px;
-      display: block;
-      margin-left: -70px;
+    h1 {
+      text-align: center;
     }
   }
 }
