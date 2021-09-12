@@ -3,7 +3,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 export default function Home() {
   return (
-    <section>
+    <section id="about">
       <Head title="About"/>
 
       <header>

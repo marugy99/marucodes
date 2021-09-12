@@ -2,20 +2,23 @@ import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react"
 import { checkObj } from "../../functions/coolFunctions";
 import Head from "../../components/Head";
-import { MdKeyboardArrowRight, MdLaunch } from "react-icons/md";
+import { MdKeyboardArrowRight, MdLaunch, MdFolderOpen } from "react-icons/md";
 
 const Projects = ({ projectsData }) => {
     return ( 
         <section id="projects">
             <Head title="Projects"/>
             <header>
-                <MdKeyboardArrowRight /><h1>Projects</h1>
+                <div>
+                    <MdKeyboardArrowRight />
+                    <h1>Projects</h1>
+                </div>
+                <p>These are some of the projects I’ve built while learning new things.</p>
             </header>
-            <p>These are some of the projects I’ve built while learning new things.</p>
             {
                 projectsData.map((project, index) => (
                     <article key={index} className="project-tile">
-                        <div>
+                        <div className="project-info">
                             <h2>{project.title}</h2>
                             <ul>
                                 {
@@ -25,10 +28,10 @@ const Projects = ({ projectsData }) => {
                                 }
                             </ul>
                             <BlockContent blocks={project.description} projectId="ewz4ezcb" dataset="production" />
-                            <div className="project-links">
-                                <div><MdLaunch /><a href={project.link} rel="noreferrer" target="_blank">Live site</a></div>
-                                <a href={project.repo} rel="noreferrer" target="_blank">Repository</a>
-                            </div>
+                            <nav className="project-links">
+                                <a href={project.link} rel="noreferrer" target="_blank"><MdLaunch />Live site</a>
+                                <a href={project.repo} rel="noreferrer" target="_blank"><MdFolderOpen />Repository</a>
+                            </nav>
                         </div>
                         <img src={project.mainImage.asset.url} alt={project.mainImage.alt} />
                     </article>

@@ -5,14 +5,12 @@ const Layout = ({ children }) => {
 
     return ( 
         <>
-            <section className="main-card">
+            <article className="main-card">
                 <Navbar />
-                <div className="content">
-                    <main>
-                        {children}
-                    </main>
-                </div>
-            </section>
+                <main className="content">
+                    {children}
+                </main>
+            </article>
             <Footer />
         </>
      );
