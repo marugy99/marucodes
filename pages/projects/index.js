@@ -3,8 +3,16 @@ import BlockContent from "@sanity/block-content-to-react"
 import { checkObj } from "../../functions/coolFunctions";
 import Head from "../../components/Head";
 import { MdKeyboardArrowRight, MdLaunch, MdFolderOpen } from "react-icons/md";
+import { ImCircleUp } from "react-icons/im";
 
 const Projects = ({ projectsData }) => {
+
+    const scrollToTop = () => {
+        document.documentElement.scrollTo({
+            top: 0
+        })
+    }
+
     return ( 
         <section id="projects">
             <Head title="Projects"/>
@@ -37,6 +45,7 @@ const Projects = ({ projectsData }) => {
                     </article>
                 ))
             }
+            <a href="#" onClick={scrollToTop} className="scroll-top"><ImCircleUp /> Back to top</a>
         </section>
      );
 }
