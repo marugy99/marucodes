@@ -137,7 +137,7 @@ footer {
     border: none;
 
     li {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
 
     .show-menu a:not(:last-child) {
@@ -147,7 +147,6 @@ footer {
     .show-menu {
       // When the mobile menu is toggle, links appear covering all the content
       display: flex;
-      align-items: center;
       justify-content: center;
       position: absolute;
       width: 100%;
@@ -160,6 +159,10 @@ footer {
 
       a:not(:first-child) {
         margin-top: 1rem;
+      }
+
+      ul {
+        margin-top: 4rem;
       }
     }
 

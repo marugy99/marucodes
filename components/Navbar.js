@@ -38,7 +38,6 @@ const Navbar = () => {
     }, [])
 
     // Toggle menu functionality (hambuger menu)
-
     const [toggleMenu, setToggleMenu] = useState(false);
 
     const changeToggle = () => {

@@ -5,6 +5,10 @@
   background-color: var(--gradientPrimary);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", monospace;
   font-weight: 300;
@@ -52,6 +56,11 @@ p {
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 300ms ease-in-out;
+
+  &:hover {
+    color: var(--link-hover);
+  }
 }
 
 ul {

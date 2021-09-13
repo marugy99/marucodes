@@ -5,14 +5,14 @@
       display: flex;
       align-items: center;
     }
-  }
 
-  svg {
-    fill: var(--accentPrimary);
-    width: 70px;
-    height: 70px;
-    display: block;
-    margin-left: -20px;
+    svg {
+      fill: var(--accentPrimary);
+      width: 70px;
+      height: 70px;
+      display: block;
+      margin-left: -20px;
+    }
   }
 
   h2 {
@@ -57,7 +57,7 @@
   .project-tile {
     display: flex;
     align-items: center;
-    margin: 2rem 0;
+    margin: 2rem 0 1.5rem 0;
     background-color: rgba(255, 255, 255, 0.35);
     padding: 1rem;
     border-radius: 20px;
@@ -71,15 +71,7 @@
 
   .project-links {
     display: flex;
-    margin-left: 1rem;
     margin-top: 1.2rem;
-
-    svg {
-      width: 25px;
-      height: auto;
-      margin-right: 5px;
-      margin-bottom: 2px;
-    }
 
     a {
       margin-right: 4rem;
@@ -88,9 +80,40 @@
       align-items: center;
       transition: all 300ms ease-in-out;
 
+      svg {
+        width: 25px;
+        height: auto;
+        margin-right: 5px;
+        margin-bottom: 2px;
+        fill: var(--accentPrimary);
+      }
+
       &:hover {
         transform: translateY(-3px);
+        color: var(--link-hover);
       }
+    }
+  }
+
+  .scroll-top {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--accentPrimary);
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+    transition: all 300ms ease-in-out;
+
+    svg {
+      width: 35px;
+      height: auto;
+      margin-right: 10px;
+      margin-left: 5px;
+    }
+
+    &:hover {
+      color: var(--link-hover);
     }
   }
 }
@@ -116,15 +139,24 @@
 
       a {
         margin-right: 0px;
-      }
 
-      svg {
-        margin-left: 0px;
+        svg {
+          margin-left: 0px;
+          width: 20px;
+        }
       }
     }
 
     img {
       width: 300px;
+    }
+
+    .scroll-top {
+      font-size: 12px;
+
+      svg {
+        width: 25px;
+      }
     }
   }
 }
