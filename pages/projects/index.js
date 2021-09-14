@@ -13,9 +13,10 @@ const Projects = ({ projectsData }) => {
         })
     }
 
-    return ( 
+    return (
+        <>
+        <Head title="Projects"/>
         <section id="projects">
-            <Head title="Projects"/>
             <header>
                 <div>
                     <MdKeyboardArrowRight />
@@ -47,6 +48,7 @@ const Projects = ({ projectsData }) => {
             }
             <a href="#" onClick={scrollToTop} className="scroll-top"><ImCircleUp /> Back to top</a>
         </section>
+        </>
      );
 }
 

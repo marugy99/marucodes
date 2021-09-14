@@ -3,30 +3,40 @@ import BlockContent from "@sanity/block-content-to-react"
 import Link from "next/link"
 import { checkObj, formatDate } from "../../functions/coolFunctions";
 import Head from "../../components/Head";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Posts = ({ postsData }) => {
     return (
         <>
             <Head title="Journal"/>
-            {
-                postsData && postsData.map((post, index) => (
-                    <Link href={`/journal/${post.slug.current}`} key={index}>
-                        <a>
-                            <article>
-                                <h1>{post.title}</h1>
-                                <p>{formatDate(post.publishedAt)}</p>
-                                <p>By {post.author}</p>
-                                <ul>
-                                {post.categories.map((category, index) => (
-                                    <li key={index}>{category.title}</li>
-                                ))}
-                                </ul>
-                                <BlockContent blocks={post.body} projectId="ewz4ezcb" dataset="production" />
-                            </article>
-                        </a>
-                    </Link>
-                ))
-            }
+            <section id="journal">
+                <header>
+                    <div>
+                        <MdKeyboardArrowRight />
+                        <h1>Journal</h1>
+                    </div>
+                    <p>Sometimes I like to write about my thoughts.</p>
+                </header>
+                {
+                    postsData && postsData.map((post, index) => (
+                        <Link href={`/journal/${post.slug.current}`} key={index}>
+                            <a>
+                                <article className="journal-tile">
+                                    <h2>{post.title}</h2>
+                                    <p>{formatDate(post.publishedAt)}</p>
+                                    <p>By {post.author}</p>
+                                    <ul>
+                                    {post.categories.map((category, index) => (
+                                        <li key={index}>{category.title}</li>
+                                    ))}
+                                    </ul>
+                                    <BlockContent blocks={post.body} projectId="ewz4ezcb" dataset="production" />
+                                </article>
+                            </a>
+                        </Link>
+                    ))
+                }
+            </section>
         </>
     )
 }
