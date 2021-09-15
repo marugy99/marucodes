@@ -7,9 +7,7 @@ const Layout = ({ children }) => {
         <>
             <article className="main-card">
                 <Navbar />
-                <main className="content">
-                    {children}
-                </main>
+                {children}
             </article>
             <Footer />
         </>

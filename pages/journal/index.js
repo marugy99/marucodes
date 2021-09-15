@@ -9,7 +9,7 @@ const Posts = ({ postsData }) => {
     return (
         <>
             <Head title="Journal"/>
-            <section id="journal">
+            <section id="journal" className="content">
                 <header>
                     <div>
                         <MdKeyboardArrowRight />

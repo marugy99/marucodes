@@ -16,7 +16,7 @@ const Projects = ({ projectsData }) => {
     return (
         <>
         <Head title="Projects"/>
-        <section id="projects">
+        <section id="projects" className="content">
             <header>
                 <div>
                     <MdKeyboardArrowRight />

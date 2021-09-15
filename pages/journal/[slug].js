@@ -8,7 +8,7 @@ const SinglePost = ({ singlePost }) => {
     return (
         <>
         {singlePost && 
-            <article>
+            <article className="content">
                 <h1>{singlePost.title}</h1>
                 <p>{formatDate(singlePost.publishedAt)}</p>
                 <p>By {singlePost.author}</p>
