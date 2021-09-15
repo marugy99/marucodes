@@ -1,9 +1,12 @@
-@use 'variables';
-
 .text-stroke {
   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 2.5px;
   -webkit-text-stroke-color: var(--black);
+}
+
+#about.content {
+  display: grid;
+  place-items: center;
 }
 
 #about {
