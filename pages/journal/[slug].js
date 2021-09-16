@@ -1,27 +1,31 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react"
 import { checkObj, formatDate } from "../../functions/coolFunctions";
+import Head from "../../components/Head";
 
 const SinglePost = ({ singlePost }) => {
     console.log(singlePost)
 
     return (
-        <>
+        <div className="content" id="single-post">
         {singlePost && 
-            <article className="content">
+            <article className="journal-tile">
+                <Head title={singlePost.title}/>    
                 <h1>{singlePost.title}</h1>
-                <p>{formatDate(singlePost.publishedAt)}</p>
-                <p>By {singlePost.author}</p>
-                {singlePost.categories.map((category, index) => (
-                    <ul key={index}>
-                        <li>{category.title}</li>
-                    </ul>
-                ))}
-                {singlePost.mainImage ? <img src={singlePost.mainImage.asset.url} alt={singlePost.mainImage.alt} /> : "No picture"}
+                <div className="journal-info">
+                    {singlePost.categories.map((category, index) => (
+                        <ul key={index}>
+                            <li>{category.title}</li>
+                        </ul>
+                    ))}
+                    <p>{formatDate(singlePost.publishedAt)}</p>
+                    <p>By {singlePost.author}</p>
+                </div>
+                {singlePost.mainImage && <img src={singlePost.mainImage.asset.url} alt={singlePost.mainImage.alt} />}
                 <BlockContent blocks={singlePost.body} projectId="ewz4ezcb" dataset="production" />
             </article>
         }
-        </>
+        </div>
     )
 }
 

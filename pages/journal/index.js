@@ -23,14 +23,16 @@ const Posts = ({ postsData }) => {
                             <a>
                                 <article className="journal-tile">
                                     <h2>{post.title}</h2>
-                                    <p>{formatDate(post.publishedAt)}</p>
-                                    <p>By {post.author}</p>
-                                    <ul>
-                                    {post.categories.map((category, index) => (
-                                        <li key={index}>{category.title}</li>
-                                    ))}
-                                    </ul>
-                                    <BlockContent blocks={post.body} projectId="ewz4ezcb" dataset="production" />
+                                    <div className="journal-info">
+                                        <ul>
+                                        {post.categories.map((category, index) => (
+                                            <li key={index}>{category.title}</li>
+                                        ))}
+                                        </ul>
+                                        <p>{formatDate(post.publishedAt)}</p>
+                                        <p>By {post.author}</p>
+                                    </div>
+                                    <BlockContent blocks={post.body} projectId="ewz4ezcb" dataset="production" />          
                                 </article>
                             </a>
                         </Link>
