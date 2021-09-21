@@ -40,6 +40,32 @@
     font-size: 1rem;
     margin: 0;
   }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    margin: 1.5rem 0;
+    object-fit: cover;
+    object-position: bottom;
+  }
+
+  .read-more {
+    margin: 0;
+    display: inline-block;
+    font-size: 0.9rem;
+    border-bottom: 1px solid transparent;
+    transition: all 300ms ease-in-out;
+    font-weight: bolder;
+  }
+
+  &:hover {
+    .read-more {
+      transform: translateY(-3px);
+      color: var(--link-hover);
+      border-bottom: 1px solid var(--link-hover);
+    }
+  }
 }
 
 .journal-info {

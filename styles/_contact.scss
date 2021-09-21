@@ -1,0 +1,45 @@
+#contact {
+  header {
+    div {
+      // Align page title with arrow svg
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      fill: var(--accentPrimary);
+      width: 70px;
+      height: 70px;
+      display: block;
+      margin-left: -20px;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input,
+  textarea {
+    margin: 1rem 0;
+    padding: 8px 0px;
+    display: block;
+    border: none;
+    width: 100%;
+  }
+
+  .contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  #contact {
+    .contact-info {
+      grid-template-columns: 40vw 40vw;
+    }
+  }
+}

@@ -69,11 +69,9 @@
 
 .main-card {
   background-color: rgba(255, 255, 255, 0.5);
-  max-width: 70rem;
+  width: 70rem;
   margin-top: 1rem;
   margin-bottom: 0;
-  margin-left: 2rem;
-  margin-right: 2rem;
   border-radius: 20px;
   position: relative;
 }
@@ -123,11 +121,13 @@ footer {
 
 // Media queries
 
-@media (max-width: 700px) {
+@media (max-width: 1200px) {
   .main-card {
-    margin: 1rem;
+    width: 100%;
   }
+}
 
+@media (max-width: 700px) {
   .main-nav {
     border: none;
 

@@ -1,4 +1,4 @@
-@use 'variables';
+@use "variables";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&family=Roboto:wght@300;500&display=swap");
 
 *::selection {
@@ -14,7 +14,6 @@ body {
   font-weight: 300;
   line-height: 1.5;
   font-size: 1.2rem;
-  margin: 0;
   color: var(--black);
   background: linear-gradient(
     90deg,
