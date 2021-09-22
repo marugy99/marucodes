@@ -1,49 +1,45 @@
 import Head from "../components/Head";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowRight, MdMailOutline } from "react-icons/md";
 
 const Contact = () => {
   return (
     <section id="contact" className="content">
       <Head title="Contact" />
       <header>
-        <div>
+        <div className="page-title">
           <MdKeyboardArrowRight />
           <h1>Contact</h1>
         </div>
         <p>Let's get in touch!</p>
+        <div className="text-icon">
+          <MdMailOutline />
+          <p>marulucenat@gmail.com</p>
+        </div>
       </header>
       <form action="POST" data-netlify="true">
         <div className="contact-info">
-          <label for="name">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Enter your name"
-              required
-            />
+          <label htmlFor="name">
+            Name
+            <input type="text" name="name" id="name" required />
           </label>
-          <label for="email">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email"
-              required
-            />
+
+          <label htmlFor="email">
+            Email
+            <input type="email" name="email" id="email" required />
           </label>
         </div>
 
-        <textarea
-          class="text-area"
-          name="message"
-          id="message"
-          rows="10"
-          placeholder="Your message..."
-          required
-        ></textarea>
-
-        <input type="submit" value="Send" />
+        <label htmlFor="message">
+          Message
+          <textarea
+            class="text-area"
+            name="message"
+            id="message"
+            rows="10"
+            required
+          ></textarea>
+        </label>
+        <button type="submit">Submit</button>
       </form>
     </section>
   );
