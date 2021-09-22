@@ -87,6 +87,20 @@
   }
 }
 
+.page-title {
+  // Align page title with arrow svg
+  display: flex;
+  align-items: center;
+
+  svg {
+    fill: var(--accentPrimary);
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin-left: -20px;
+  }
+}
+
 // Footer styles
 
 footer {

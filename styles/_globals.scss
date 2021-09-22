@@ -5,6 +5,12 @@
   background-color: var(--gradientPrimary);
 }
 
+*:focus {
+  outline: none;
+  box-shadow: var(--focus) 0px 0px 0px 3px;
+  border-radius: 10px;
+}
+
 html {
   scroll-behavior: smooth;
 }
