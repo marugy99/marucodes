@@ -1,5 +1,4 @@
 import client from "../../client";
-import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
 import { checkObj, formatDate } from "../../functions/coolFunctions";
 import Head from "../../components/Head";
@@ -9,9 +8,9 @@ const Posts = ({ postsData }) => {
   return (
     <>
       <Head title="Journal" />
-      <section id="journal" className="content">
+      <main id="journal" className="content">
         <header>
-          <div>
+          <div className="page-title">
             <MdKeyboardArrowRight />
             <h1>Journal</h1>
           </div>
@@ -20,25 +19,23 @@ const Posts = ({ postsData }) => {
         {postsData &&
           postsData.map((post, index) => (
             <Link href={`/journal/${post.slug.current}`} key={index}>
-              <a>
-                <article className="journal-tile">
-                  <h2>{post.title}</h2>
-                  <div className="journal-info">
-                    <ul>
-                      {post.categories.map((category, index) => (
-                        <li key={index}>{category.title}</li>
-                      ))}
-                    </ul>
-                    <p>{formatDate(post.publishedAt)}</p>
-                    <p>By {post.author}</p>
-                  </div>
-                  <p>{post.extract}</p>
-                  <p className="read-more journal-info">Read more</p>
-                </article>
+              <a className="journal-tile">
+                <h2>{post.title}</h2>
+                <div className="journal-info">
+                  <ul>
+                    {post.categories.map((category, index) => (
+                      <li key={index}>{category.title}</li>
+                    ))}
+                  </ul>
+                  <p>{formatDate(post.publishedAt)}</p>
+                  <p>By {post.author}</p>
+                </div>
+                <p>{post.extract}</p>
+                <p className="read-more journal-info">Read more</p>
               </a>
             </Link>
           ))}
-      </section>
+      </main>
     </>
   );
 };

@@ -15,16 +15,16 @@ const Projects = ({ projectsData }) => {
   return (
     <>
       <Head title="Projects" />
-      <section id="projects" className="content">
+      <main id="projects" className="content">
         <header>
-          <div>
+          <div className="page-title">
             <MdKeyboardArrowRight />
             <h1>Projects</h1>
           </div>
           <p>Some of the projects I’ve built while learning new things.</p>
         </header>
         {projectsData.map((project, index) => (
-          <article key={index} className="project-tile">
+          <section key={index} className="project-tile">
             <div className="project-info">
               <h2>{project.title}</h2>
               <ul>
@@ -52,12 +52,12 @@ const Projects = ({ projectsData }) => {
               src={project.mainImage.asset.url}
               alt={project.mainImage.alt}
             />
-          </article>
+          </section>
         ))}
         <a href="#" onClick={scrollToTop} className="scroll-top">
           <ImCircleUp /> Back to top
         </a>
-      </section>
+      </main>
     </>
   );
 };
