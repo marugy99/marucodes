@@ -27,6 +27,10 @@
     }
   }
 
+  h2 {
+    font-size: 3rem;
+  }
+
   .skills {
     display: flex;
     flex-direction: column;
@@ -55,18 +59,8 @@
       }
     }
 
-    div {
-      // Align page title with arrow svg
-      display: flex;
-      align-items: center;
-
-      svg {
-        fill: var(--accentPrimary);
-        width: 70px;
-        height: 70px;
-        display: block;
-        margin-left: -70px;
-      }
+    .page-title svg {
+      margin-left: -70px;
     }
   }
 }
@@ -77,20 +71,20 @@
   }
 
   #about {
-    .skills ul {
-      grid-template-columns: 1fr;
+    h1 {
+      text-align: center;
     }
-
+    h2 {
+      font-size: 2rem;
+    }
     li {
       font-size: 1rem;
     }
-
     header img {
       width: 100px;
     }
-
-    h1 {
-      text-align: center;
+    .skills ul {
+      grid-template-columns: 1fr;
     }
   }
 }

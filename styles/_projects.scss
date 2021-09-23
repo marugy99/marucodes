@@ -1,27 +1,7 @@
 #projects {
-  header {
-    div {
-      // Align page title with arrow svg
-      display: flex;
-      align-items: center;
-    }
-
-    svg {
-      fill: var(--accentPrimary);
-      width: 70px;
-      height: 70px;
-      display: block;
-      margin-left: -20px;
-    }
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
   ul {
-    margin: 0.5rem 0;
     display: flex;
+    margin: 0.5rem 0;
     text-transform: uppercase;
     font-weight: bolder;
     color: var(--accentPrimary);

@@ -44,12 +44,12 @@ h1 {
   font-weight: 800;
 }
 
-h2 {
-  font-size: 3rem;
+h2,
+h3 {
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: 2rem;
   text-align: center;
 }
 
@@ -73,13 +73,13 @@ ul {
   padding-left: 0px;
 }
 
+svg {
+  fill: var(--accentPrimary);
+}
+
 @media (max-width: 700px) {
   h1 {
     font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
   }
 
   p {
