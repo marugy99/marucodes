@@ -1,6 +1,6 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
-import { checkObj, formatDate } from "../../functions/coolFunctions";
+import { checkObj, formatDate } from "../../customFunctions/coolFunctions";
 import Head from "../../components/Head";
 
 const SinglePost = ({ singlePost }) => {
