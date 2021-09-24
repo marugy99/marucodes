@@ -16,7 +16,7 @@ export default function Home() {
         </header>
 
         <p>
-          <span className="emoji wave">👋</span> I am a self-taught{" "}
+          <span className="emoji wave">👋</span> I&apos;m a self-taught{" "}
           <span className="bolder">front-end developer</span> who is passionate
           about learning new technologies & building things. As an art and
           design enthusiast, I truly love bringing ideas to life in the form of

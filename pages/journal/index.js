@@ -14,7 +14,9 @@ const Posts = ({ postsData }) => {
             <MdKeyboardArrowRight />
             <h1>Journal</h1>
           </div>
-          <p>Some of my thoughts on the things I am learning and building.</p>
+          <p>
+            Some of my thoughts on the things I&apos;m learning and building.
+          </p>
         </header>
         {postsData &&
           postsData.map((post, index) => (
@@ -28,7 +30,7 @@ const Posts = ({ postsData }) => {
                     ))}
                   </ul>
                   <p>{formatDate(post.publishedAt)}</p>
-                  <p>By{post.author}</p>
+                  <p>By {post.author}</p>
                 </div>
                 <p>{post.extract}</p>
                 <p className="read-more text-uppercase">Read more</p>

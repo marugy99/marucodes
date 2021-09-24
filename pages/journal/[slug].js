@@ -12,7 +12,7 @@ const SinglePost = ({ singlePost }) => {
         <article className="journal-tile">
           <Head title={singlePost.title} />
           <h1>{singlePost.title}</h1>
-          <div className="journal-info">
+          <div className="journal-info text-uppercase">
             {singlePost.categories.map((category, index) => (
               <ul key={index}>
                 <li>{category.title}</li>

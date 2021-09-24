@@ -60,12 +60,17 @@
       content: "\0025CF  ";
       margin-right: 0.3rem;
       color: var(--accentSecondary);
+      font-size: 15px;
     }
   }
 }
 
 #single-post {
   .journal-tile {
+    padding: 0px;
+    margin-top: 1rem;
+    background-color: transparent;
+
     p {
       font-size: 1.1rem;
     }

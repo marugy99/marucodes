@@ -83,8 +83,14 @@
     header img {
       width: 100px;
     }
-    .skills ul {
-      grid-template-columns: 1fr;
+    .skills {
+      ul {
+        grid-template-columns: 1fr;
+      }
+
+      .page-title svg {
+        margin-left: -20px;
+      }
     }
   }
 }

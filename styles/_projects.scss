@@ -145,9 +145,16 @@
   }
 }
 
+@media (max-width: 700px) {
+  #projects {
+    ul li {
+      font-size: 0.8rem;
+    }
+  }
+}
+
 @media (max-width: 375px) {
   #projects {
-    ul li,
     .project-tile p,
     .project-links a,
     p {
