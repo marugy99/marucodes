@@ -10,7 +10,7 @@ const Contact = () => {
           <MdKeyboardArrowRight />
           <h1>Contact</h1>
         </div>
-        <p>Let's get in touch!</p>
+        <p>Let get in touch!</p>
         <div className="text-icon">
           <MdMailOutline />
           <p>marulucenat@gmail.com</p>

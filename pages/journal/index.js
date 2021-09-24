@@ -1,6 +1,6 @@
 import client from "../../client";
 import Link from "next/link";
-import { checkObj, formatDate } from "../../functions/coolFunctions";
+import { checkObj, formatDate } from "../../customFunctions/coolFunctions";
 import Head from "../../components/Head";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
@@ -14,7 +14,7 @@ const Posts = ({ postsData }) => {
             <MdKeyboardArrowRight />
             <h1>Journal</h1>
           </div>
-          <p>Some of my thoughts on the things I'm learning and building.</p>
+          <p>Some of my thoughts on the things I am learning and building.</p>
         </header>
         {postsData &&
           postsData.map((post, index) => (
