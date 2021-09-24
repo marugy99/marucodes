@@ -150,15 +150,17 @@ footer {
 
 // 404 page
 
-#not-found.content {
+#not-found.content,
+#success.content {
   display: grid;
   place-items: center;
 }
 
-#not-found {
+#not-found,
+#success {
   h1 {
     font-size: 2rem;
-    color: var(--accentPrimary);
+    text-align: center;
   }
 }
 
