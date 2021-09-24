@@ -18,21 +18,15 @@ const Contact = () => {
       </header>
       <form action="POST" data-netlify="true">
         <div className="contact-info">
-          <label htmlFor="name">
-            Name
-            <input type="text" name="name" id="name" required />
-          </label>
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" id="name" required />
 
-          <label htmlFor="email">
-            Email
-            <input type="email" name="email" id="email" required />
-          </label>
+          <label htmlFor="email">Email</label>
+          <input type="email" name="email" id="email" required />
         </div>
 
-        <label htmlFor="message">
-          Message
-          <textarea name="message" id="message" rows="10" required></textarea>
-        </label>
+        <label htmlFor="message">Message</label>
+        <textarea name="message" id="message" rows="10" required></textarea>
         <button type="submit">Submit</button>
       </form>
     </section>
