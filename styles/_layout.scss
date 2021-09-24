@@ -95,6 +95,13 @@
   }
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: var(--accentPrimary);
+  letter-spacing: 0.5px;
+}
+
 // Footer styles
 
 footer {

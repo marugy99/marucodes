@@ -27,7 +27,7 @@ const Projects = ({ projectsData }) => {
           <section key={index} className="project-tile">
             <div className="project-info">
               <h2>{project.title}</h2>
-              <ul>
+              <ul className="text-uppercase">
                 {project.stack.map((proj, index) => (
                   <li key={index}>{proj}</li>
                 ))}
@@ -54,7 +54,7 @@ const Projects = ({ projectsData }) => {
             />
           </section>
         ))}
-        <a href="#" onClick={scrollToTop} className="scroll-top">
+        <a href="#" onClick={scrollToTop} className="scroll-top text-uppercase">
           <ImCircleUp /> Back to top
         </a>
       </main>

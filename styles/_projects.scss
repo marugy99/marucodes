@@ -2,10 +2,6 @@
   ul {
     display: flex;
     margin: 0.5rem 0;
-    text-transform: uppercase;
-    font-weight: bolder;
-    color: var(--accentPrimary);
-    letter-spacing: 0.5px;
 
     li {
       font-size: 1rem;
@@ -82,13 +78,9 @@
   }
 
   .scroll-top {
-    text-transform: uppercase;
     font-size: 14px;
-    color: var(--accentPrimary);
-    font-weight: bolder;
     display: flex;
     align-items: center;
-    letter-spacing: 1px;
     transition: all 300ms ease-in-out;
 
     svg {

@@ -21,17 +21,17 @@ const Posts = ({ postsData }) => {
             <Link href={`/journal/${post.slug.current}`} key={index}>
               <a className="journal-tile">
                 <h2>{post.title}</h2>
-                <div className="journal-info">
+                <div className="journal-info text-uppercase">
                   <ul>
                     {post.categories.map((category, index) => (
                       <li key={index}>{category.title}</li>
                     ))}
                   </ul>
                   <p>{formatDate(post.publishedAt)}</p>
-                  <p>By {post.author}</p>
+                  <p>By{post.author}</p>
                 </div>
                 <p>{post.extract}</p>
-                <p className="read-more journal-info">Read more</p>
+                <p className="read-more text-uppercase">Read more</p>
               </a>
             </Link>
           ))}
