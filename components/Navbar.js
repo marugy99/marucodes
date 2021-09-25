@@ -44,7 +44,11 @@ const Navbar = () => {
 
   return (
     <nav className="main-nav">
-      <button onClick={changeToggle} className="ham-menu">
+      <button
+        onClick={changeToggle}
+        className="ham-menu"
+        aria-label="Open the menu"
+      >
         {!toggleMenu ? <IoIosMenu /> : <IoIosClose />}
       </button>
 

@@ -8,7 +8,12 @@ export default function Home() {
 
       <main>
         <header>
-          <img src="/Maru.jpeg" alt="Maru profile pic" />
+          <img
+            src="/Maru.jpeg"
+            alt="Maru profile pic"
+            width="140"
+            height="140"
+          />
           <p>Hi. Hola. Olá</p>
           <h1>
             Call <span className="text-stroke">me</span> Maru
