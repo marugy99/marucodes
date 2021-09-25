@@ -16,7 +16,7 @@ const Contact = () => {
           <p>marulucenat@gmail.com</p>
         </div>
       </header>
-      <form action="POST" action="/success" data-netlify="true">
+      <form method="POST" action="/success" data-netlify="true">
         <div className="contact-info">
           <label htmlFor="name">
             Name
