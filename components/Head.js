@@ -9,7 +9,7 @@ const Header = ({ title }) => {
       <meta property="og:title" content="Call me Maru" />
       <meta
         property="og:description"
-        content="Self-taught front-end developer who is passionate about learning new technologies and building things."
+        content="Self-taught front-end developer who loves art and design."
       />
       <meta property="og:url" content="https://marucodes.com/" />
       <meta property="og:type" content="website" />
