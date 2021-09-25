@@ -13,16 +13,13 @@ const Header = ({ title }) => {
       />
       <meta property="og:url" content="https://marucodes.com/" />
       <meta property="og:type" content="website" />
-      <meta
-        property="og:image"
-        content="https://i.ibb.co/5nmYwfV/marucodes-new.png"
-      />
+      <meta property="og:image" content="https://i.imgur.com/OGre97T.png" />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="640" />
       <meta property="twitter:card" content="summary_large_image" />
       <meta
         property="twitter:image"
-        content="https://i.ibb.co/5nmYwfV/marucodes-new.png"
+        content="https://i.imgur.com/OGre97T.png"
       />
       <meta property="twitter:site" content="@marulucenat" />
     </Head>
