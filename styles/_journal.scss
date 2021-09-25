@@ -71,7 +71,8 @@
     margin-top: 1rem;
     background-color: transparent;
 
-    p {
+    p,
+    blockquote {
       font-size: 1.1rem;
     }
   }
@@ -81,6 +82,14 @@
       font-size: 1rem;
     }
   }
+}
+
+blockquote {
+  background-color: rgba(255, 255, 255, 0.35);
+  border-left: 4px solid var(--accentPrimary);
+  padding: 0.5em 10px;
+  margin: 1rem 0;
+  font-size: 1rem;
 }
 
 @media (max-width: 700px) {
@@ -98,7 +107,8 @@
 
   #single-post {
     .journal-tile {
-      p {
+      p,
+      blockquote {
         font-size: 1rem;
       }
     }
