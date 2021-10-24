@@ -6,6 +6,16 @@ import Head from "../../components/Head";
 const SinglePost = ({ singlePost }) => {
   console.log(singlePost);
 
+  const serializers = {
+    types: {
+      code: props => (
+        <pre data-language={props.node.language}>
+          <code>{props.node.code}</code>
+        </pre>
+      )
+    }
+  }
+
   return (
     <div className="content" id="single-post">
       {singlePost && (
@@ -31,6 +41,7 @@ const SinglePost = ({ singlePost }) => {
             blocks={singlePost.body}
             projectId="ewz4ezcb"
             dataset="production"
+            serializers={serializers}
           />
         </article>
       )}
