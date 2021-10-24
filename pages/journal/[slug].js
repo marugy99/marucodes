@@ -22,7 +22,7 @@ const SinglePost = ({ singlePost }) => {
     <div className="content" id="single-post">
       {singlePost && (
         <article className="journal-tile">
-          <Head title={singlePost.title} />
+          <Head title={singlePost.title} ogTitle={singlePost.title} ogDescription={singlePost.extract} ogImage={singlePost.mainImage.asset.url} />
           <h1>{singlePost.title}</h1>
           <div className="journal-info text-uppercase">
             {singlePost.categories.map((category, index) => (
@@ -33,12 +33,6 @@ const SinglePost = ({ singlePost }) => {
             <p>{formatDate(singlePost.publishedAt)}</p>
             <p>By {singlePost.author}</p>
           </div>
-          {singlePost.mainImage && (
-            <img
-              src={singlePost.mainImage.asset.url}
-              alt={singlePost.mainImage.alt}
-            />
-          )}
           <BlockContent
             blocks={singlePost.body}
             projectId="ewz4ezcb"
@@ -83,6 +77,7 @@ export async function getStaticProps(context) {
             title,
             body,
             publishedAt,
+            extract,
             "author": author->name,
             categories[] -> { title },
             mainImage{
