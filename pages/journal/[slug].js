@@ -4,14 +4,16 @@ import { checkObj, formatDate } from "../../customFunctions/coolFunctions";
 import Head from "../../components/Head";
 
 const SinglePost = ({ singlePost }) => {
-  console.log(singlePost);
 
   const serializers = {
     types: {
       code: props => (
-        <pre data-language={props.node.language}>
-          <code>{props.node.code}</code>
-        </pre>
+        <div>
+          <span className="code-lang">{props.node.language}</span>
+          <pre data-language={props.node.language} className={`language-${props.node.language}`}>
+            <code>{props.node.code}</code>
+          </pre>
+        </div>
       )
     }
   }

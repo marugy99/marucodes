@@ -92,6 +92,31 @@ blockquote {
   font-size: 1rem;
 }
 
+// Syntax highlight
+
+.journal-tile code[class*="language-"], 
+.journal-tile pre[class*="language-"] {
+  font-size: 0.9rem;
+}
+
+.journal-tile pre[class*="language-"] {
+  margin: 0;
+  border-top-left-radius: 0;
+}
+
+.code-lang {
+  display: inline-block;
+  background-color: var(--accentSecondary);
+  color: var(--footerTxt);
+  padding: 0.8rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  font-weight: bolder;
+}
+
 @media (max-width: 700px) {
   .journal-tile {
     h1 {

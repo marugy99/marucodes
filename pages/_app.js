@@ -1,4 +1,5 @@
 import "../styles/styles.scss";
+import "prismjs/themes/prism-okaidia.css";
 import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
