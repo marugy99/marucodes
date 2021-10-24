@@ -97,4 +97,6 @@ export async function getStaticProps(context) {
   }
 }
 
+Projects.displayName = "Projects";
+
 export default Projects;
