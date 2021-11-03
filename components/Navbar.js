@@ -43,16 +43,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="main-nav">
+    <section className="main-nav">
       <button
         onClick={changeToggle}
         className="ham-menu"
         aria-label="Open the menu"
-      >
+        >
         {!toggleMenu ? <IoIosMenu /> : <IoIosClose />}
       </button>
 
-      <div className={`${toggleMenu ? "show-menu" : ""} menu-details`}>
+      <nav className="main-menu">
         <ul>
           <Link href="/">
             <a onClick={changeToggle}>
@@ -79,8 +79,38 @@ const Navbar = () => {
         <button onClick={changeTheme} className="theme-toggle">
           {!darkMode ? <IoMdSunny /> : <IoMdMoon />}
         </button>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mobile menu */}
+      <nav className={`mobile-menu ${toggleMenu ? "extended" : ""}`}>
+        <ul>
+          <Link href="/">
+            <a onClick={changeToggle}>
+              <li>About</li>
+            </a>
+          </Link>
+          <Link href="/projects">
+            <a onClick={changeToggle}>
+              <li>Projects</li>
+            </a>
+          </Link>
+          <Link href="/journal">
+            <a onClick={changeToggle}>
+              <li>Journal</li>
+            </a>
+          </Link>
+          <Link href="/contact">
+            <a onClick={changeToggle}>
+              <li>Contact</li>
+            </a>
+          </Link>
+        </ul>
+
+        <button onClick={changeTheme} className="theme-toggle">
+          {!darkMode ? <IoMdSunny /> : <IoMdMoon />}
+        </button>
+      </nav>
+    </section>
   );
 };
 

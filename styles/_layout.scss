@@ -1,7 +1,6 @@
 // Styles for the layout component
 
 // Navigation bar styles
-
 .main-nav {
   display: flex;
   justify-content: center;
@@ -18,7 +17,7 @@
     li {
       padding: 5px;
       border-radius: 10px;
-      transition: all 300ms linear;
+      transition: background-color 300ms linear;
       cursor: pointer;
       &:hover {
         background-color: var(--accentPrimary);
@@ -54,10 +53,88 @@
       height: 40px;
     }
   }
+  // Hide hamburger menu by default
   .ham-menu {
-    // Hide hamburger menu by default
     display: none;
   }
+}
+
+.mobile-menu {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  font-size: 1rem;
+  color: var(--footerTxt);
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: top right;
+  transform: scale(0.95);
+  transition: all 200ms ease-in-out;
+
+  ul {
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+
+  a:not(:first-child) {
+    margin-top: 1rem;
+  }
+
+  .theme-toggle {
+    top: 15px;
+    left: 20px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+
+@media (max-width: 700px) {
+  // Mobile menu can only be expanded in small breakpoints
+  .mobile-menu.extended {
+    visibility: visible;
+    opacity: 1;
+    background-color: var(--menuBg);
+    border-radius: 20px;
+    z-index: 10;
+    transform: scale(1);
+  }
+
+
+  .main-nav {
+    border: none;
+
+    ul a:not(:last-child) {
+      margin-right: 0;
+    }
+
+    li {
+      font-size: 1.2rem;
+    }
+
+    // Hide desktop menu
+    .main-menu {
+      display: none;
+    }
+
+    // Show hamburger menu icon
+    .ham-menu {
+      display: block;
+      right: 20px;
+      top: 10px;
+      z-index: 20;
+
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }  
 }
 
 // Main card style (glassmorphism) and padding for inner content
@@ -76,13 +153,6 @@
   min-height: 80vh;
 }
 
-@media (max-width: 700px) {
-  .content {
-    padding: 1.5rem;
-    margin-top: 1rem;
-  }
-}
-
 .page-title {
   // Align page title with arrow svg
   display: flex;
@@ -96,7 +166,25 @@
   }
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: var(--accentPrimary);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 1200px) {
+  .main-card {
+    width: 100%;
+  }
+}
+
 @media (max-width: 700px) {
+  .content {
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
   .page-title {
     svg {
       display: block;
@@ -105,13 +193,6 @@
       margin-left: 0px;
     }
   }
-}
-
-.text-uppercase {
-  text-transform: uppercase;
-  font-weight: bolder;
-  color: var(--accentPrimary);
-  letter-spacing: 0.5px;
 }
 
 // Footer styles
@@ -161,90 +242,5 @@ footer {
   h1 {
     font-size: 2rem;
     text-align: center;
-  }
-}
-
-// Media queries
-
-@media (max-width: 1200px) {
-  .main-card {
-    width: 100%;
-  }
-}
-
-@media (max-width: 700px) {
-  .main-nav {
-    border: none;
-
-    li {
-      font-size: 1.2rem;
-    }
-
-    .show-menu a:not(:last-child) {
-      margin-right: 0px;
-    }
-
-    .show-menu {
-      // When the mobile menu is toggle, links appear covering all the content
-      display: flex;
-      justify-content: center;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: var(--menuBg);
-      color: var(--footerTxt);
-      border-radius: 20px;
-      z-index: 10;
-      animation: fade 400ms ease-in-out;
-
-      a:not(:first-child) {
-        margin-top: 1rem;
-      }
-
-      ul {
-        margin-top: 4rem;
-      }
-    }
-
-    @keyframes fade {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    // When reached 700px, hide menu and show hamburger icon
-    .ham-menu {
-      display: block;
-      right: 20px;
-      top: 10px;
-      z-index: 20;
-
-      svg {
-        width: 40px;
-        height: 40px;
-      }
-    }
-  }
-
-  .menu-details {
-    display: none;
-    font-size: 1rem;
-
-    ul {
-      flex-direction: column;
-    }
-
-    .theme-toggle {
-      top: 15px;
-      left: 20px;
-
-      svg {
-        width: 30px;
-        height: 30px;
-      }
-    }
   }
 }

@@ -3,7 +3,7 @@ import { IoLogoGithub, IoLogoTwitter, IoLogoYoutube } from "react-icons/io";
 const Footer = () => {
   return (
     <footer>
-      <p>Made with ♥ by Maru &copy; 2021 |</p>
+      <p>Made with ♥, Next.js and Sanity &copy; 2021 |</p>
       <div>
         <a
           href="https://github.com/marugy99"

@@ -45,7 +45,7 @@ const Posts = ({ postsData }) => {
 export async function getStaticProps(context) {
   try {
     const postsData = await client.fetch(`
-        *[ _type == "post" ] {
+        *[ _type == "post" ] | order(_createdAt desc) {
             title,
             body,
             extract,

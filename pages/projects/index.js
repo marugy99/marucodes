@@ -1,5 +1,3 @@
-/* eslint-disable react/display-name */
-
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
 import { checkObj } from "../../customFunctions/coolFunctions";
