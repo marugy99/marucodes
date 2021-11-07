@@ -6,9 +6,13 @@ const Prism = require("prismjs")
 const Layout = ({ children }) => {
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-        Prism.highlightAll();
+    
+    if(document.readyState !== "loading") {
+      setTimeout(Prism.highlightAll(), 0);
+    } else {
+      document.addEventListener('DOMContentLoaded', Prism.highlightAll());
     }
+
 }, []);
 
   return (
