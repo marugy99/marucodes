@@ -76,24 +76,6 @@
       }
     }
   }
-
-  .scroll-top {
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    transition: all 300ms ease-in-out;
-
-    svg {
-      width: 35px;
-      height: auto;
-      margin-right: 10px;
-      margin-left: 5px;
-    }
-
-    &:hover {
-      color: var(--link-hover);
-    }
-  }
 }
 
 @media (max-width: 900px) {

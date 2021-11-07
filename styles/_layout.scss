@@ -207,6 +207,10 @@ footer {
   margin: 0.5rem 1rem;
   font-size: 1rem;
 
+  a {
+    text-decoration: underline;
+  }
+
   svg {
     fill: currentColor;
     &:hover {
@@ -218,13 +222,14 @@ footer {
     display: flex;
   }
 
-  a {
+  .socials a {
     font-size: 1.7rem;
     display: flex;
     align-items: center;
+    border-bottom: none;
   }
 
-  a:not(:last-child) {
+  .socials a:not(:last-child) {
     margin-right: 1rem;
   }
 }

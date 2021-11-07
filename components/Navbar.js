@@ -47,7 +47,8 @@ const Navbar = () => {
       <button
         onClick={changeToggle}
         className="ham-menu"
-        aria-label="Open the menu"
+        aria-haspopup="true"
+        aria-expanded={toggleMenu}
         >
         {!toggleMenu ? <IoIosMenu /> : <IoIosClose />}
       </button>

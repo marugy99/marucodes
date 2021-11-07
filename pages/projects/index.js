@@ -54,9 +54,6 @@ const Projects = ({ projectsData }) => {
             />
           </section>
         ))}
-        <a href="#" onClick={scrollToTop} className="scroll-top text-uppercase">
-          <ImCircleUp /> Back to top
-        </a>
       </main>
     </>
   );
