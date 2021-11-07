@@ -2,6 +2,9 @@ import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
 import { checkObj, formatDate } from "../../customFunctions/coolFunctions";
 import Head from "../../components/Head";
+import getYouTubeId from 'get-youtube-id';
+import YouTube from 'react-youtube';
+import Codepen from "../../components/Codepen";
 
 const SinglePost = ({ singlePost }) => {
 
@@ -14,7 +17,21 @@ const SinglePost = ({ singlePost }) => {
             <code>{props.node.code}</code>
           </pre>
         </div>
-      )
+      ),
+      youtube: ({node}) => {
+        const { url } = node
+        const id = getYouTubeId(url)
+        return (<YouTube videoId={id} />)
+      },
+      codepen: ({ node }) => {
+        const { url } = node;
+        const splitURL = url.split("/");
+        const [, , , user, , hash] = splitURL;
+        const embedUrl = `https://codepen.io/${user}/embed/${hash}?height=370&theme-id=dark&default-tab=result`;
+        return (
+          <Codepen url={embedUrl} />
+        );
+      }
     }
   }
 
