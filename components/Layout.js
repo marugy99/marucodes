@@ -1,18 +1,11 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import React,  { useEffect } from "react"
-const Prism = require("prismjs")
+import Prism from "prismjs";
 
 const Layout = ({ children }) => {
-
   useEffect(() => {
-    
-    if(document.readyState !== "loading") {
-      setTimeout(Prism.highlightAll(), 0);
-    } else {
-      document.addEventListener('DOMContentLoaded', Prism.highlightAll());
-    }
-
+    setTimeout(() => Prism.highlightAll(), 0)
 }, []);
 
   return (
