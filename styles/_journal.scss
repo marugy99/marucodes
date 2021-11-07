@@ -88,15 +88,8 @@
     margin-top: 1rem;
     background-color: transparent;
 
-    p,
     blockquote {
       font-size: 1.1rem;
-    }
-  }
-
-  .journal-info {
-    p {
-      font-size: 1rem;
     }
   }
 }
@@ -152,22 +145,38 @@ p code, li code {
     h1 {
       font-size: 2rem;
     }
-  }
 
-  #single-post {
-    .journal-tile {
-      p,
-      blockquote, 
-      li {
-        font-size: 1rem;
-      }
+    p, 
+    ul, 
+    li,
+    p code, li code {
+      font-size: 0.9rem;
     }
 
+    blockquote {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .journal-tile {
     .journal-info {
-      p,
+      display: block;
+
+      p, 
       ul, 
       li {
-        font-size: 0.8rem;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      li:before {
+        content: "\0025CF  ";
+        color: var(--accentSecondary);
+        font-size: 15px;
+        margin-left: 0.5rem;
+        margin-right: 0.3rem;
       }
     }
   }

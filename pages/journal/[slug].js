@@ -39,7 +39,7 @@ const SinglePost = ({ singlePost }) => {
 
   useEffect(() => {
     setTimeout(() => Prism.highlightAll(), 0)
-}, []);
+  }, []);
 
   return (
     <div className="content" id="single-post">
