@@ -11,11 +11,13 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^2.15.0",
+    "get-youtube-id": "^1.0.1",
     "next": "11.1.0",
     "prismjs": "^1.25.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
+    "react-youtube": "^7.13.1",
     "sass": "^1.38.0"
   },
   "devDependencies": {
