@@ -5,6 +5,8 @@ import Head from "../../components/Head";
 import getYouTubeId from 'get-youtube-id';
 import YouTube from 'react-youtube';
 import Codepen from "../../components/Codepen";
+import React,  { useEffect } from "react";
+import Prism from "prismjs";
 
 const SinglePost = ({ singlePost }) => {
 
@@ -34,6 +36,10 @@ const SinglePost = ({ singlePost }) => {
       }
     }
   }
+
+  useEffect(() => {
+    setTimeout(() => Prism.highlightAll(), 0)
+}, []);
 
   return (
     <div className="content" id="single-post">
