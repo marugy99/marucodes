@@ -3,7 +3,9 @@ import { IoLogoGithub, IoLogoTwitter, IoLogoYoutube } from "react-icons/io";
 const Footer = () => {
   return (
     <footer>
-      <p>Made with ♥, <a href="https://nextjs.org/"> Next.js</a> and <a href="https://www.sanity.io/">Sanity</a> &copy; 2021</p>
+      <p>
+        Made with ♥, <a href="https://nextjs.org/" rel="noreferrer" target="_blank">Next.js</a> and <a href="https://www.sanity.io/" rel="noreferrer" target="_blank"> Sanity</a> &copy; 2021
+      </p>
       <div className="socials">
         <a
           href="https://github.com/marugy99"

@@ -5,6 +5,7 @@ import Head from "../../components/Head";
 import getYouTubeId from 'get-youtube-id';
 import YouTube from 'react-youtube';
 import Codepen from "../../components/Codepen";
+import CodeSnippet from "../../components/CodeSnippet";
 import React,  { useEffect } from "react";
 import Prism from "prismjs";
 
@@ -13,12 +14,7 @@ const SinglePost = ({ singlePost }) => {
   const serializers = {
     types: {
       code: props => (
-        <div>
-          <span className="code-lang">{props.node.language}</span>
-          <pre data-language={props.node.language} className={`language-${props.node.language}`}>
-            <code>{props.node.code}</code>
-          </pre>
-        </div>
+        <CodeSnippet language={props.node.language} code={props.node.code} />
       ),
       youtube: ({node}) => {
         const { url } = node
