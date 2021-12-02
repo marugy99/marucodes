@@ -1,5 +1,6 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
+import urlBuilder from "@sanity/image-url";
 import { checkObj, formatDate } from "../../customFunctions/coolFunctions";
 import Head from "../../components/Head";
 import getYouTubeId from 'get-youtube-id';
@@ -9,6 +10,8 @@ import CodeSnippet from "../../components/CodeSnippet";
 import React,  { useEffect } from "react";
 import Prism from "prismjs";
 
+const urlFor = source => urlBuilder({projectId: 'ewz4ezcb', dataset: 'production'}).image(source);
+
 const SinglePost = ({ singlePost }) => {
 
   const serializers = {
@@ -16,7 +19,7 @@ const SinglePost = ({ singlePost }) => {
       code: props => (
         <CodeSnippet language={props.node.language} code={props.node.code} />
       ),
-      youtube: ({node}) => {
+      youtube: ({ node }) => {
         const { url } = node
         const id = getYouTubeId(url)
         return (<YouTube videoId={id} />)
@@ -29,6 +32,11 @@ const SinglePost = ({ singlePost }) => {
         return (
           <Codepen url={embedUrl} />
         );
+      },
+      image: ({ node }) => {
+        return (
+          <img src={urlFor(node.asset)} alt={node.alt} />
+        )
       }
     }
   }

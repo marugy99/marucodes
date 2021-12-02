@@ -47,7 +47,7 @@ const Navbar = () => {
       <button
         onClick={changeToggle}
         className="ham-menu"
-        aria-haspopup="true"
+        aria-label="Toggle menu"
         aria-expanded={toggleMenu}
         >
         {!toggleMenu ? <IoIosMenu /> : <IoIosClose />}
@@ -107,7 +107,7 @@ const Navbar = () => {
           </Link>
         </ul>
 
-        <button onClick={changeTheme} className="theme-toggle">
+        <button onClick={changeTheme} aria-label="Toggle theme" className="theme-toggle">
           {!darkMode ? <IoMdSunny /> : <IoMdMoon />}
         </button>
       </nav>
