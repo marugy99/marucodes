@@ -55,29 +55,37 @@ const Navbar = () => {
 
       <nav className="main-menu">
         <ul>
-          <Link href="/">
-            <a onClick={changeToggle}>
-              <li>About</li>
-            </a>
-          </Link>
-          <Link href="/projects">
-            <a onClick={changeToggle}>
-              <li>Projects</li>
-            </a>
-          </Link>
-          <Link href="/journal">
-            <a onClick={changeToggle}>
-              <li>Journal</li>
-            </a>
-          </Link>
-          <Link href="/contact">
-            <a onClick={changeToggle}>
-              <li>Contact</li>
-            </a>
-          </Link>
+          <li>
+            <Link href="/">
+              <a onClick={changeToggle}>
+                About
+              </a>
+            </Link>
+            </li>
+          <li>
+            <Link href="/projects">
+              <a onClick={changeToggle}>
+                Projects
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/journal">
+              <a onClick={changeToggle}>
+                Journal
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact">
+              <a onClick={changeToggle}>
+                Contact
+              </a>
+            </Link>
+          </li>
         </ul>
 
-        <button onClick={changeTheme} className="theme-toggle">
+        <button onClick={changeTheme} aria-label="Toggle theme" className="theme-toggle">
           {!darkMode ? <IoMdSunny /> : <IoMdMoon />}
         </button>
       </nav>
@@ -85,26 +93,34 @@ const Navbar = () => {
       {/* Mobile menu */}
       <nav className={`mobile-menu ${toggleMenu ? "extended" : ""}`}>
         <ul>
-          <Link href="/">
-            <a onClick={changeToggle}>
-              <li>About</li>
-            </a>
-          </Link>
-          <Link href="/projects">
-            <a onClick={changeToggle}>
-              <li>Projects</li>
-            </a>
-          </Link>
-          <Link href="/journal">
-            <a onClick={changeToggle}>
-              <li>Journal</li>
-            </a>
-          </Link>
-          <Link href="/contact">
-            <a onClick={changeToggle}>
-              <li>Contact</li>
-            </a>
-          </Link>
+          <li>
+            <Link href="/">
+              <a onClick={changeToggle}>
+                About
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/projects">
+              <a onClick={changeToggle}>
+                Projects
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/journal">
+              <a onClick={changeToggle}>
+                Journal
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact">
+              <a onClick={changeToggle}>
+                Contact
+              </a>
+            </Link>
+          </li>
         </ul>
 
         <button onClick={changeTheme} aria-label="Toggle theme" className="theme-toggle">
