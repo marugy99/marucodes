@@ -1,7 +1,7 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
 import urlBuilder from "@sanity/image-url";
-import { checkObj, formatDate } from "../../customFunctions/coolFunctions";
+import { checkObj, formatDate } from "../../utils";
 import Head from "../../components/Head";
 import getYouTubeId from 'get-youtube-id';
 import YouTube from 'react-youtube';

@@ -1,6 +1,6 @@
 import client from "../../client";
 import Link from "next/link";
-import { checkObj, formatDate } from "../../customFunctions/coolFunctions";
+import { checkObj, formatDate } from "../../utils";
 import Head from "../../components/Head";
 import { MdKeyboardArrowRight } from "react-icons/md";
 

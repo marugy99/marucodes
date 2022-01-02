@@ -1,6 +1,6 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
-import { checkObj } from "../../customFunctions/coolFunctions";
+import { checkObj } from "../../utils";
 import Head from "../../components/Head";
 import { MdKeyboardArrowRight, MdLaunch, MdFolderOpen } from "react-icons/md";
 import { ImCircleUp } from "react-icons/im";
