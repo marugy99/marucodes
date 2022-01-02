@@ -1,10 +1,13 @@
 import { IoLogoGithub, IoLogoTwitter, IoLogoYoutube } from "react-icons/io";
 
 const Footer = () => {
+  const today = new Date();
+  const currentYear = today.getFullYear();
+
   return (
     <footer>
       <p>
-        Made with ♥, <a href="https://nextjs.org/" rel="noreferrer" target="_blank">Next.js</a> and <a href="https://www.sanity.io/" rel="noreferrer" target="_blank"> Sanity</a> &copy; 2021
+        Made with ♥, <a href="https://nextjs.org/" rel="noreferrer" target="_blank">Next.js</a> and <a href="https://www.sanity.io/" rel="noreferrer" target="_blank"> Sanity</a> &copy; {currentYear}
       </p>
       <div className="socials">
         <a
