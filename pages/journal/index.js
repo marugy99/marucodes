@@ -32,7 +32,7 @@ const Posts = ({ postsData }) => {
                   <p>{formatDate(post.publishedAt)}</p>
                   <p>By {post.author}</p>
                 </div>
-                <p>{post.extract}</p>
+                <p>{post.excerpt}</p>
                 <p className="read-more text-uppercase">Read more</p>
               </a>
             </Link>
@@ -48,7 +48,7 @@ export async function getStaticProps(context) {
         *[ _type == "post" ] | order(_createdAt desc) {
             title,
             body,
-            extract,
+            excerpt,
             slug,
             publishedAt,
             "author": author->name,

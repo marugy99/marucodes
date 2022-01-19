@@ -1,3 +1,5 @@
+import urlBuilder from "@sanity/image-url";
+
 export const formatDate = (date) => {
     const initialDate = new Date(date);
     return initialDate.toLocaleString('en-US', {
@@ -8,3 +10,5 @@ export const formatDate = (date) => {
 }
 
 export const checkObj = (obj) => Object.keys(obj).length === 0 && obj.constructor === Object;
+
+export const urlFor = source => urlBuilder({projectId: 'ewz4ezcb', dataset: 'production'}).image(source);

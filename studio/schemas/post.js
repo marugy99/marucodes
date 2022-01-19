@@ -48,8 +48,8 @@ export default {
       type: "blockContent",
     },
     {
-      name: "extract",
-      title: "Extract",
+      name: "excerpt",
+      title: "Excerpt",
       type: "text",
     },
   ],

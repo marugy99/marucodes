@@ -1,55 +1,52 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
-import urlBuilder from "@sanity/image-url";
-import { checkObj, formatDate } from "../../utils";
+import { checkObj, formatDate, urlFor } from "../../utils";
 import Head from "../../components/Head";
-import getYouTubeId from 'get-youtube-id';
-import YouTube from 'react-youtube';
+import getYouTubeId from "get-youtube-id";
+import YouTube from "react-youtube";
 import Codepen from "../../components/Codepen";
 import CodeSnippet from "../../components/CodeSnippet";
-import React,  { useEffect } from "react";
+import React, { useEffect } from "react";
 import Prism from "prismjs";
 
-const urlFor = source => urlBuilder({projectId: 'ewz4ezcb', dataset: 'production'}).image(source);
-
 const SinglePost = ({ singlePost }) => {
-
   const serializers = {
     types: {
-      code: props => (
-        <CodeSnippet language={props.node.language} code={props.node.code} />
+      code: ({ node }) => (
+        <CodeSnippet language={node.language} code={node.code} />
       ),
       youtube: ({ node }) => {
-        const { url } = node
-        const id = getYouTubeId(url)
-        return (<YouTube videoId={id} />)
+        const { url } = node;
+        const id = getYouTubeId(url);
+        return <YouTube videoId={id} />;
       },
       codepen: ({ node }) => {
         const { url } = node;
         const splitURL = url.split("/");
         const [, , , user, , hash] = splitURL;
         const embedUrl = `https://codepen.io/${user}/embed/${hash}?height=370&theme-id=dark&default-tab=result`;
-        return (
-          <Codepen url={embedUrl} />
-        );
+        return <Codepen url={embedUrl} />;
       },
       image: ({ node }) => {
-        return (
-          <img src={urlFor(node.asset)} alt={node.alt} />
-        )
-      }
-    }
-  }
+        return <img src={urlFor(node.asset)} alt={node.alt} />;
+      },
+    },
+  };
 
   useEffect(() => {
-    setTimeout(() => Prism.highlightAll(), 0)
+    setTimeout(() => Prism.highlightAll(), 0);
   }, []);
 
   return (
     <div className="content" id="single-post">
       {singlePost && (
         <article className="journal-tile">
-          <Head title={singlePost.title} ogTitle={singlePost.title} ogDescription={singlePost.extract} ogImage={singlePost.mainImage.asset.url} />
+          <Head
+            title={singlePost.title}
+            ogTitle={singlePost.title}
+            ogDescription={singlePost.excerpt}
+            ogImage={singlePost.mainImage.asset.url}
+          />
           <h1>{singlePost.title}</h1>
           <div className="journal-info text-uppercase">
             {singlePost.categories.map((category, index) => (
@@ -72,7 +69,7 @@ const SinglePost = ({ singlePost }) => {
   );
 };
 
-export async function getStaticPaths(context) {
+export async function getStaticPaths() {
   try {
     const allPosts = await client.fetch(`
         *[ _type == "post" ] {
@@ -104,7 +101,7 @@ export async function getStaticProps(context) {
             title,
             body,
             publishedAt,
-            extract,
+            excerpt,
             "author": author->name,
             categories[] -> { title },
             mainImage{
@@ -116,7 +113,7 @@ export async function getStaticProps(context) {
             }
         }
         `);
-    // Check if the object is empty, and if not return the data
+    // If object is empty, show not found page
     if (checkObj(singlePost)) {
       return {
         notFound: true,
