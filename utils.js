@@ -9,6 +9,6 @@ export const formatDate = (date) => {
     })
 }
 
-export const checkObj = (obj) => Object.keys(obj).length === 0 && obj.constructor === Object;
+export const isObjEmpty = (obj) => Object.keys(obj).length === 0 && obj.constructor === Object;
 
 export const urlFor = source => urlBuilder({projectId: 'ewz4ezcb', dataset: 'production'}).image(source);

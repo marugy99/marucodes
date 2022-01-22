@@ -1,12 +1,12 @@
+import React, { useEffect } from "react";
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
-import { checkObj, formatDate, urlFor } from "../../utils";
+import { isObjEmpty, formatDate, urlFor } from "../../utils";
 import Head from "../../components/Head";
-import getYouTubeId from "get-youtube-id";
-import YouTube from "react-youtube";
 import Codepen from "../../components/Codepen";
 import CodeSnippet from "../../components/CodeSnippet";
-import React, { useEffect } from "react";
+import getYouTubeId from "get-youtube-id";
+import YouTube from "react-youtube";
 import Prism from "prismjs";
 
 const SinglePost = ({ singlePost }) => {
@@ -34,7 +34,7 @@ const SinglePost = ({ singlePost }) => {
   };
 
   useEffect(() => {
-    setTimeout(() => Prism.highlightAll(), 0);
+    Prism.highlightAll();
   }, []);
 
   return (
@@ -70,63 +70,55 @@ const SinglePost = ({ singlePost }) => {
 };
 
 export async function getStaticPaths() {
-  try {
-    const allPosts = await client.fetch(`
-        *[ _type == "post" ] {
-            slug
-        }
-        `);
-    // Map through each "data" returned and return the slugs as params. This is so Next knows how many pages to generate
-    const paths = allPosts.map((post) => {
-      return {
-        params: { slug: post.slug.current },
-      };
-    });
+  const allPosts = await client.fetch(`
+      *[ _type == "post" ] {
+          slug
+      }
+      `);
 
+  const paths = allPosts.map((post) => {
     return {
-      paths,
-      fallback: false,
+      params: { slug: post.slug.current },
     };
-  } catch (err) {
-    console.log(err);
-  }
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
 }
 
 export async function getStaticProps(context) {
   const slug = context.params.slug;
 
-  try {
-    const singlePost = await client.fetch(`
-        *[slug.current == "${slug}"][0] {
-            title,
-            body,
-            publishedAt,
-            excerpt,
-            "author": author->name,
-            categories[] -> { title },
-            mainImage{
-                asset->{
-                    _id,
-                    url
-                },
-                alt
-            }
-        }
-        `);
-    // If object is empty, show not found page
-    if (checkObj(singlePost)) {
-      return {
-        notFound: true,
-      };
-    } else {
-      return {
-        props: {
-          singlePost,
-        },
-      };
-    }
-  } catch (err) {
-    console.log(err);
+  const singlePost = await client.fetch(`
+      *[slug.current == "${slug}"][0] {
+          title,
+          body,
+          publishedAt,
+          excerpt,
+          "author": author->name,
+          categories[] -> { title },
+          mainImage{
+              asset->{
+                  _id,
+                  url
+              },
+              alt
+          }
+      }
+      `);
+  // If object is empty, show not found page
+  if (isObjEmpty(singlePost)) {
+    return {
+      notFound: true,
+    };
+  } else {
+    return {
+      props: {
+        singlePost,
+      },
+    };
   }
 }
 

@@ -1,17 +1,10 @@
 import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
-import { checkObj } from "../../utils";
+import { isObjEmpty } from "../../utils";
 import Head from "../../components/Head";
 import { MdKeyboardArrowRight, MdLaunch, MdFolderOpen } from "react-icons/md";
-import { ImCircleUp } from "react-icons/im";
 
 const Projects = ({ projectsData }) => {
-  const scrollToTop = () => {
-    document.documentElement.scrollTo({
-      top: 0,
-    });
-  };
-
   return (
     <>
       <Head title="Projects" />
@@ -59,9 +52,8 @@ const Projects = ({ projectsData }) => {
   );
 };
 
-export async function getStaticProps(context) {
-  try {
-    const projectsData = await client.fetch(`
+export async function getStaticProps() {
+  const projectsData = await client.fetch(`
         *[ _type == "project" ] | order(_createdAt asc) {
             title,
             description,
@@ -77,20 +69,17 @@ export async function getStaticProps(context) {
             }
         }
         `);
-    // Check if the object is empty, and if not return the data
-    if (checkObj(projectsData)) {
-      return {
-        notFound: true,
-      };
-    } else {
-      return {
-        props: {
-          projectsData,
-        },
-      };
-    }
-  } catch (err) {
-    console.log(err);
+  // Check if the object is empty, and if not return the data
+  if (isObjEmpty(projectsData)) {
+    return {
+      notFound: true,
+    };
+  } else {
+    return {
+      props: {
+        projectsData,
+      },
+    };
   }
 }
 

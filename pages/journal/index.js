@@ -1,6 +1,6 @@
 import client from "../../client";
 import Link from "next/link";
-import { checkObj, formatDate } from "../../utils";
+import { isObjEmpty, formatDate } from "../../utils";
 import Head from "../../components/Head";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
@@ -42,33 +42,29 @@ const Posts = ({ postsData }) => {
   );
 };
 
-export async function getStaticProps(context) {
-  try {
-    const postsData = await client.fetch(`
-        *[ _type == "post" ] | order(_createdAt desc) {
-            title,
-            body,
-            excerpt,
-            slug,
-            publishedAt,
-            "author": author->name,
-            categories[] -> { title }
-        }
-        `);
-    // Check if the object is empty, and if not return the data
-    if (checkObj(postsData)) {
-      return {
-        notFound: true,
-      };
-    } else {
-      return {
-        props: {
-          postsData,
-        },
-      };
-    }
-  } catch (err) {
-    console.log(err);
+export async function getStaticProps() {
+  const postsData = await client.fetch(`
+      *[ _type == "post" ] | order(_createdAt desc) {
+          title,
+          body,
+          excerpt,
+          slug,
+          publishedAt,
+          "author": author->name,
+          categories[] -> { title }
+      }
+      `);
+  // Check if the object is empty, and if not return the data
+  if (isObjEmpty(postsData)) {
+    return {
+      notFound: true,
+    };
+  } else {
+    return {
+      props: {
+        postsData,
+      },
+    };
   }
 }
 

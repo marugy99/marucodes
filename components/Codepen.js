@@ -7,7 +7,7 @@ const Codepen = ({ url }) => {
             title="CodePen Embed"
             src={url}
             frameBorder="no"
-            allowTransparency
+            allowtransparency="true"
             allowFullScreen
           />
     );
