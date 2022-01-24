@@ -28,7 +28,7 @@ const SinglePost = ({ singlePost }) => {
         return <Codepen url={embedUrl} />;
       },
       image: ({ node }) => {
-        return <img src={urlFor(node.asset)} alt={node.alt} />;
+        return <img src={urlFor(node.asset)} alt={node.alt} />; 
       },
     },
   };
@@ -71,10 +71,10 @@ const SinglePost = ({ singlePost }) => {
 
 export async function getStaticPaths() {
   const allPosts = await client.fetch(`
-      *[ _type == "post" ] {
-          slug
-      }
-      `);
+    *[ _type == "post" ] {
+        slug
+    }
+  `);
 
   const paths = allPosts.map((post) => {
     return {
@@ -92,22 +92,22 @@ export async function getStaticProps(context) {
   const slug = context.params.slug;
 
   const singlePost = await client.fetch(`
-      *[slug.current == "${slug}"][0] {
-          title,
-          body,
-          publishedAt,
-          excerpt,
-          "author": author->name,
-          categories[] -> { title },
-          mainImage{
-              asset->{
-                  _id,
-                  url
-              },
-              alt
-          }
-      }
-      `);
+    *[slug.current == "${slug}"][0] {
+        title,
+        body,
+        publishedAt,
+        excerpt,
+        "author": author->name,
+        categories[] -> { title },
+        mainImage{
+            asset->{
+                _id,
+                url
+            },
+            alt
+        }
+    }
+  `);
   // If object is empty, show not found page
   if (isObjEmpty(singlePost)) {
     return {

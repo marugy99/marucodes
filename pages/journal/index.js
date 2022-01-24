@@ -44,16 +44,16 @@ const Posts = ({ postsData }) => {
 
 export async function getStaticProps() {
   const postsData = await client.fetch(`
-      *[ _type == "post" ] | order(_createdAt desc) {
-          title,
-          body,
-          excerpt,
-          slug,
-          publishedAt,
-          "author": author->name,
-          categories[] -> { title }
-      }
-      `);
+    *[ _type == "post" ] | order(_createdAt desc) {
+        title,
+        body,
+        excerpt,
+        slug,
+        publishedAt,
+        "author": author->name,
+        categories[] -> { title }
+    }
+  `);
   // Check if the object is empty, and if not return the data
   if (isObjEmpty(postsData)) {
     return {
