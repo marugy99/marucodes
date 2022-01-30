@@ -2,7 +2,7 @@ const Codepen = ({ url }) => {
     return ( 
         <iframe
             height="450"
-            style={{ width: '100%' }}
+            style={{ width: '100%', maxWidth: '100%' }}
             scrolling="no"
             title="CodePen Embed"
             src={url}

@@ -141,6 +141,13 @@ p code, li code {
   font-family: 'Roboto Mono', monospace;
 }
 
+iframe {
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 640px; 
+}
+
 @media (max-width: 700px) {
   .journal-tile {
     h1 {
