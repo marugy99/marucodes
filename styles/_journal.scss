@@ -13,7 +13,6 @@
     margin-left: 0;
     margin-top: 1rem;
     font-size: 1.1rem;
-    line-height: 1.6;
   }
 
   a {
@@ -26,7 +25,10 @@
     list-style: disc;
     margin-left: 1rem;
     font-size: 1.1rem;
-    line-height: 2rem;
+
+    li {
+      margin-top: 10px;
+    }
   }
 
   img {
@@ -75,6 +77,10 @@
     list-style: none;
     margin-left: 0;
     line-height: initial;
+
+    li {
+      margin-top: 0px;
+    }
   }
 }
 
