@@ -1,5 +1,5 @@
 import Head from "../components/Head";
-import { MdKeyboardArrowRight, MdMailOutline } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Contact = () => {
   return (
@@ -11,10 +11,6 @@ const Contact = () => {
           <h1>Contact</h1>
         </div>
         <p>Let&apos;s get in touch!</p>
-        <div className="text-icon">
-          <MdMailOutline />
-          <p>marulucenat@gmail.com</p>
-        </div>
       </header>
       <form name="contact" action="/success" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
