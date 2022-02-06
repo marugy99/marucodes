@@ -1,18 +1,25 @@
 import Head from "next/head";
+import { useRouter } from 'next/router'
 
 const Header = ({ title, ogTitle, ogDescription, ogImage }) => {
+
+  const router = useRouter();
+  const isJournalPost = router.pathname === '/journal/[slug]';
+  const currentPath = router.asPath;
+
   return (
     <Head>
       <title>{title} | Call me Maru</title>
-      <meta name="description" content="Personal website" />
+      <meta name="description" content={ogDescription} />
       <link rel="icon" href="/favicon.png" />
       <meta property="og:title" content={ogTitle} />
       <meta
         property="og:description"
         content={ogDescription}
       />
-      <meta property="og:url" content="https://marucodes.com/" />
-      <meta property="og:type" content="website" />
+      <meta property="og:url" content={`https://marucodes.com${currentPath}`} />
+      <meta property="og:type" content={isJournalPost ? "article" : "website"} />
+      {isJournalPost && <meta property="article:publisher" content="https://marucodes.com" />}
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="640" />
