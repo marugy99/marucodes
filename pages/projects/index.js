@@ -43,7 +43,7 @@ const Projects = ({ projectsData }) => {
             </div>
             <img
               src={project.mainImage.asset.url}
-              alt={project.mainImage.alt}
+              alt={`${project.title} live website`}
             />
           </section>
         ))}
