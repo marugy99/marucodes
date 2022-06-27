@@ -54,7 +54,7 @@ const Projects = ({ projectsData }) => {
 
 export async function getStaticProps() {
   const projectsData = await client.fetch(`
-        *[ _type == "project" ] | order(_createdAt asc) {
+        *[ _type == "project" ] | order(_createdAt desc) {
             title,
             description,
             link,

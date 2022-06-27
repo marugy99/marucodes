@@ -29,8 +29,7 @@ export default function Home() {
         </p>
         <p>
           My name is María Eugenia <span className="bolder">(she/her)</span> but
-          most people call me Maru. During my free time I enjoy playing
-          videogames and filming silly videos. 🎬
+          most people call me Maru. During my free time I enjoy drawing, watching movies and playing board games. I'm currently based in Portugal.
         </p>
 
         <section className="skills">

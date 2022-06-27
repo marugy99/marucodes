@@ -30,7 +30,7 @@ const Header = ({ title, ogTitle, ogDescription, ogImage }) => {
       />
       <meta property="twitter:site" content="@marulucenat" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&family=Roboto:wght@300;500&display=swap&family=Roboto+Mono:wght@400&display=swap"
         rel="stylesheet"
