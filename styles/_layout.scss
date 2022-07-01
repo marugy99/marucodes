@@ -45,7 +45,7 @@
     }
   }
 
-  .theme-toggle {
+  .theme-toggle { 
     right: 20px;
     top: 10px;
 
@@ -83,9 +83,11 @@
     margin-top: 1rem;
   }
 
-  .theme-toggle {
+  .theme-toggle { 
     top: 15px;
     left: 20px;
+    display: inline-flex;
+    width: max-content;
 
     svg {
       width: 30px;
