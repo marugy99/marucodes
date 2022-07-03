@@ -4,6 +4,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import { isObjEmpty, formatDate, urlFor } from "../../utils";
 import Head from "../../components/Head";
 import Codepen from "../../components/Codepen";
+import Gallery from "../../components/Gallery";
 import CodeSnippet from "../../components/CodeSnippet";
 import getYouTubeId from "get-youtube-id";
 import YouTube from "react-youtube";
@@ -30,6 +31,9 @@ const SinglePost = ({ singlePost }) => {
       image: ({ node }) => {
         return <img src={urlFor(node.asset)} alt={node.alt} />; 
       },
+      gallery: ({ node }) => {
+        return <Gallery images={node.images} callback={urlFor} />
+      }
     },
   };
 

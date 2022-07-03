@@ -12,6 +12,7 @@ import author from './author'
 import project from './project'
 import youtube from './youtube'
 import codepen from './codepen'
+import gallery from './gallery'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,5 +32,6 @@ export default createSchema({
     blockContent,
     youtube,
     codepen,
+    gallery,
   ]),
 })
