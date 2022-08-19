@@ -29,7 +29,9 @@ export default function Home() {
         </p>
         <p>
           My name is María Eugenia <span className="bolder">(she/her)</span> but
-          most people call me Maru. During my free time I enjoy drawing, watching movies and playing board games. I&apos;m currently based in Portugal.
+          most people call me Maru. During my free time I enjoy drawing,
+          watching movies and playing board games. I&apos;m currently based in
+          Portugal.
         </p>
 
         <section className="skills">
@@ -42,8 +44,8 @@ export default function Home() {
             <li>CSS</li>
             <li>JavaScript</li>
             <li>React</li>
-            <li>Git</li>
-            <li>Responsive Design</li>
+            <li>PHP</li>
+            <li>Laravel</li>
           </ul>
         </section>
       </main>
