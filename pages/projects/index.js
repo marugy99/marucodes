@@ -14,7 +14,10 @@ const Projects = ({ projectsData }) => {
             <MdKeyboardArrowRight />
             <h1>Projects</h1>
           </div>
-          <p>Some of the projects I&apos;ve built while learning new things.</p>
+          <p>
+            Some of the projects I&apos;ve built for fun while learning new
+            things.
+          </p>
         </header>
         {projectsData.map((project, index) => (
           <section key={index} className="project-tile">
