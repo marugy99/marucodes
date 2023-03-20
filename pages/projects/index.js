@@ -2,28 +2,28 @@ import client from "../../client";
 import BlockContent from "@sanity/block-content-to-react";
 import { isObjEmpty } from "../../utils";
 import Head from "../../components/Head";
-import { MdKeyboardArrowRight, MdLaunch, MdFolderOpen } from "react-icons/md";
+import { MdLaunch, MdFolderOpen } from "react-icons/md";
 
 const Projects = ({ projectsData }) => {
   return (
     <>
       <Head title="Projects" />
-      <main id="projects" className="content">
-        <header>
-          <div className="page-title">
-            <MdKeyboardArrowRight />
-            <h1>Projects</h1>
-          </div>
-          <p>
+      <main id="projects">
+        <header className="text-center">
+          <h1>Projects</h1>
+          <p className="mt-2">
             Some of the projects I&apos;ve built for fun while learning new
             things.
           </p>
         </header>
         {projectsData.map((project, index) => (
-          <section key={index} className="project-tile">
-            <div className="project-info">
-              <h2>{project.title}</h2>
-              <ul className="text-uppercase">
+          <section
+            key={index}
+            className="p-6 bg-white/25 mt-6 rounded-lg items-center grid sm:grid-cols-[auto,220px] gap-3 text-base"
+          >
+            <div>
+              <h2 className="text-2xl md:text-3xl">{project.title}</h2>
+              <ul className="flex items-center gap-4 text-gray-500 mb-2">
                 {project.stack.map((proj, index) => (
                   <li key={index}>{proj}</li>
                 ))}
@@ -33,13 +33,23 @@ const Projects = ({ projectsData }) => {
                 projectId="ewz4ezcb"
                 dataset="production"
               />
-              <nav className="project-links">
-                <a href={project.link} rel="noreferrer" target="_blank">
-                  <MdLaunch />
+              <nav className="flex items-center gap-5 mt-2">
+                <a
+                  href={project.link}
+                  className="flex items-center gap-2 hover-shadow p-1 px-2 rounded-md transition duration-300"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <MdLaunch className="text-cyan-500" />
                   Live site
                 </a>
-                <a href={project.repo} rel="noreferrer" target="_blank">
-                  <MdFolderOpen />
+                <a
+                  href={project.repo}
+                  className="flex items-center gap-2 hover-shadow p-1 px-2 rounded-md transition duration-300"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <MdFolderOpen className="text-cyan-500" />
                   Repository
                 </a>
               </nav>
@@ -47,6 +57,7 @@ const Projects = ({ projectsData }) => {
             <img
               src={project.mainImage.asset.url}
               alt={`${project.title} live website`}
+              className="rounded-md grayscale hover:grayscale-0 transition duration-300 mx-auto max-h-52 sm:h-full object-cover"
             />
           </section>
         ))}

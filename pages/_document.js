@@ -10,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
-        <body>
+        <body className="bg-indigo-100 bg-no-repeat bg-fixed bg-[linear-gradient(45deg,hsla(64,41%,92%,1)4%,rgb(122,209,240)49%,rgb(208,149,234)88%)]">
           <Main />
           <NextScript />
         </body>

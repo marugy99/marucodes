@@ -2,11 +2,9 @@ import Head from "../components/Head";
 
 export default function Custom404() {
   return (
-    <section className="content" id="not-found">
+    <section id="not-found">
       <Head title="Not Found" />
-      <div>
-        <h1>404 - Page Not Found</h1>
-      </div>
+      <h1 className="text-center text-4xl md:text-5xl">404 - Page Not Found</h1>
     </section>
   );
 }

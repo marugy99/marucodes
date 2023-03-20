@@ -1,131 +1,92 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { IoIosMenu, IoIosClose, IoMdSunny, IoMdMoon } from "react-icons/io";
+import {
+  IoColorWandOutline,
+  IoFilterOutline,
+  IoCloseOutline,
+} from "react-icons/io5";
 
 const Navbar = () => {
-  // Dark mode functionality
-  const [darkMode, setDarkMode] = useState(false);
-
-  const enableDarkMode = () => {
-    document.body.classList.add("dark-mode");
-    setDarkMode(true);
-  };
-
-  const disableDarkMode = () => {
-    document.body.classList.remove("dark-mode");
-    setDarkMode(false);
-  };
-
-  // Function used onClick to toggle dark mode
-  const changeTheme = () => {
-    if (!darkMode) {
-      enableDarkMode();
-      localStorage.setItem("darkMode", "enabled");
-    } else {
-      disableDarkMode();
-      localStorage.setItem("darkMode", "disabled");
-    }
-  };
-
-  // Checks local storage to see if dark mode was activated
-  useEffect(() => {
-    const checkTheme = localStorage.getItem("darkMode");
-    if (checkTheme === "enabled") {
-      enableDarkMode();
-    }
-  }, []);
-
-  // Toggle menu functionality (hambuger menu)
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const changeToggle = () => {
-    setToggleMenu(!toggleMenu);
-  };
+  const navItems = [
+    {
+      name: "About",
+      href: "/",
+    },
+    {
+      name: "Projects",
+      href: "/projects",
+    },
+    {
+      name: "Journal",
+      href: "/journal",
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+    },
+  ];
 
   return (
-    <section className="main-nav">
+    <section className="sm:border-b-2 sm:border-white/30 sm:pb-4 mb-4 sm:mb-6 md:mb-8">
       <button
-        onClick={changeToggle}
-        className="ham-menu"
+        onClick={() => setToggleMenu(!toggleMenu)}
+        className="text-gray-500 px-3 py-2 block sm:hidden"
         aria-label="Toggle menu"
         aria-expanded={toggleMenu}
-        >
-        {!toggleMenu ? <IoIosMenu /> : <IoIosClose />}
+      >
+        {!toggleMenu ? (
+          <IoFilterOutline className="w-6 h-6" />
+        ) : (
+          <IoCloseOutline className="w-6 h-6" />
+        )}
       </button>
 
-      <nav className="main-menu">
-        <ul>
-          <li>
-            <Link href="/">
-              <a onClick={changeToggle}>
-                About
-              </a>
-            </Link>
+      {/* Mobile menu */}
+      <nav
+        className={`${
+          toggleMenu
+            ? "bg-white/50 px-2 py-3 rounded-lg shadow-lg shadow-indigo-500/30 scale-100"
+            : "scale-75"
+        } mt-3 sm:hidden transition-all duration-300 origin-top-left`}
+      >
+        <ul
+          className={`${
+            toggleMenu
+              ? "visible max-h-[500px] opacity-100 scale-100"
+              : "invisible max-h-0 opacity-0 scale-75"
+          } flex-col flex gap-3 transform transition-all items-start duration-300 space-y-2 origin-top-left`}
+        >
+          {navItems.map((item, index) => (
+            <li
+              className={`${
+                toggleMenu ? "opacity-100" : "opacity-0"
+              } transition-all duration-300 sm:opacity-100`}
+            >
+              <Link href={item.href}>
+                <a className="hover-shadow transition duration-300 hover:bg-white/20 px-3 py-2 rounded-md">
+                  {item.name}
+                </a>
+              </Link>
             </li>
-          <li>
-            <Link href="/projects">
-              <a onClick={changeToggle}>
-                Projects
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/journal">
-              <a onClick={changeToggle}>
-                Journal
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a onClick={changeToggle}>
-                Contact
-              </a>
-            </Link>
-          </li>
+          ))}
         </ul>
-
-        <button onClick={changeTheme} aria-label="Toggle theme" className="theme-toggle">
-          {!darkMode ? <IoMdSunny /> : <IoMdMoon />}
-        </button>
       </nav>
 
-      {/* Mobile menu */}
-      <nav className={`mobile-menu ${toggleMenu ? "extended" : ""}`}>
-        <ul>
-          <li>
-            <Link href="/">
-              <a onClick={changeToggle}>
-                About
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/projects">
-              <a onClick={changeToggle}>
-                Projects
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/journal">
-              <a onClick={changeToggle}>
-                Journal
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a onClick={changeToggle}>
-                Contact
-              </a>
-            </Link>
-          </li>
+      {/* Desktop menu */}
+      <nav className="hidden sm:block">
+        <ul className="flex items-center justify-center gap-3">
+          {navItems.map((item, index) => (
+            <li>
+              <Link href={item.href}>
+                <a className="hover-shadow transition duration-300 hover:bg-white/20 px-3 py-2 rounded-md">
+                  {item.name}
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
-
-        <button onClick={changeTheme} aria-label="Toggle theme" className="theme-toggle">
-          {!darkMode ? <IoMdSunny /> : <IoMdMoon />}
-        </button>
       </nav>
     </section>
   );

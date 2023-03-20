@@ -29,11 +29,17 @@ const SinglePost = ({ singlePost }) => {
         return <Codepen url={embedUrl} />;
       },
       image: ({ node }) => {
-        return <img src={urlFor(node.asset)} alt={node.alt} />; 
+        return (
+          <img
+            className="max-w-lg block mx-auto my-5 w-full rounded-md"
+            src={urlFor(node.asset)}
+            alt={node.alt}
+          />
+        );
       },
       gallery: ({ node }) => {
-        return <Gallery images={node.images} callback={urlFor} />
-      }
+        return <Gallery images={node.images} callback={urlFor} />;
+      },
     },
   };
 
@@ -42,34 +48,38 @@ const SinglePost = ({ singlePost }) => {
   }, []);
 
   return (
-    <div className="content" id="single-post">
+    <>
       {singlePost && (
-        <article className="journal-tile">
+        <article className="bg-white/25 p-4 md:p-6 rounded-lg">
           <Head
             title={singlePost.title}
             ogTitle={singlePost.title}
             ogDescription={singlePost.excerpt}
             ogImage={singlePost.mainImage.asset.url}
           />
-          <h1>{singlePost.title}</h1>
-          <div className="journal-info text-uppercase">
-            {singlePost.categories.map((category, index) => (
-              <ul key={index}>
-                <li>{category.title}</li>
-              </ul>
-            ))}
+          <h1 className="text-4xl leading-none md:text-5xl mt-4 text-center">
+            {singlePost.title}
+          </h1>
+          <div className="flex my-4 items-center justify-center flex-col gap-1 sm:flex-row sm:gap-4 text-gray-500">
+            <ul className="flex items-center gap-2 flex-wrap">
+              {singlePost.categories.map((category, index) => (
+                <li key={index}>{category.title}</li>
+              ))}
+            </ul>
             <p>{formatDate(singlePost.publishedAt)}</p>
             <p>By {singlePost.author}</p>
           </div>
-          <BlockContent
-            blocks={singlePost.body}
-            projectId="ewz4ezcb"
-            dataset="production"
-            serializers={serializers}
-          />
+          <div id="single-post">
+            <BlockContent
+              blocks={singlePost.body}
+              projectId="ewz4ezcb"
+              dataset="production"
+              serializers={serializers}
+            />
+          </div>
         </article>
       )}
-    </div>
+    </>
   );
 };
 

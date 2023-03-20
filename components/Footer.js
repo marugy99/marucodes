@@ -5,11 +5,20 @@ const Footer = () => {
   const currentYear = today.getFullYear();
 
   return (
-    <footer>
+    <footer className="max-w-2xl mx-auto text-center flex flex-wrap items-center gap-4 mt-6 md:mt-12 justify-center text-base text-gray-600">
       <p>
-        Made with ♥, <a href="https://nextjs.org/" rel="noreferrer" target="_blank">Next.js</a> and <a href="https://www.sanity.io/" rel="noreferrer" target="_blank"> Sanity</a> &copy; {currentYear}
+        Made with ♥,{" "}
+        <a href="https://nextjs.org/" rel="noreferrer" target="_blank">
+          Next.js
+        </a>{" "}
+        and{" "}
+        <a href="https://www.sanity.io/" rel="noreferrer" target="_blank">
+          {" "}
+          Sanity
+        </a>{" "}
+        &copy; {currentYear}
       </p>
-      <div className="socials">
+      <div className="flex items-center gap-3 text-lg">
         <a
           href="https://github.com/marugy99"
           rel="noreferrer"

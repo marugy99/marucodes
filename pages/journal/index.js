@@ -2,29 +2,26 @@ import client from "../../client";
 import Link from "next/link";
 import { isObjEmpty, formatDate } from "../../utils";
 import Head from "../../components/Head";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { HiOutlineSparkles } from "react-icons/hi";
 
 const Posts = ({ postsData }) => {
   return (
     <>
       <Head title="Journal" />
-      <main id="journal" className="content">
-        <header>
-          <div className="page-title">
-            <MdKeyboardArrowRight />
-            <h1>Journal</h1>
-          </div>
-          <p>
+      <main id="journal">
+        <header className="text-center">
+          <h1>Journal</h1>
+          <p className="mt-2">
             Some of my thoughts on the things I&apos;m learning and building.
           </p>
         </header>
         {postsData &&
           postsData.map((post, index) => (
             <Link href={`/journal/${post.slug.current}`} key={index}>
-              <a className="journal-tile">
-                <h2>{post.title}</h2>
-                <div className="journal-info text-uppercase">
-                  <ul>
+              <a className="p-6 bg-white/25 mt-6 rounded-xl block text-base hover-shadow transition duration-300 group">
+                <h2 className="text-2xl md:text-3xl">{post.title}</h2>
+                <div className="flex sm:items-center flex-col gap-1 mt-1 sm:mt-0 sm:flex-row sm:gap-4 text-gray-500">
+                  <ul className="flex items-center gap-2 flex-wrap list-none">
                     {post.categories.map((category, index) => (
                       <li key={index}>{category.title}</li>
                     ))}
@@ -32,8 +29,11 @@ const Posts = ({ postsData }) => {
                   <p>{formatDate(post.publishedAt)}</p>
                   <p>By {post.author}</p>
                 </div>
-                <p>{post.excerpt}</p>
-                <p className="read-more text-uppercase">Read more</p>
+                <p className="mt-2">{post.excerpt}</p>
+                <p className="mt-2 flex items-center gap-2 text-gray-500 group-hover:text-gray-700">
+                  <HiOutlineSparkles className="w-4 h-4 text-cyan-500" />
+                  Read more
+                </p>
               </a>
             </Link>
           ))}
