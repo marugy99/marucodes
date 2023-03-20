@@ -75,6 +75,7 @@ export default function Home() {
               <a
                 className="ml-1 underline underline-offset-4 decoration-dashed decoration-cyan-500"
                 href="https://castos.com/"
+                rel="noreferrer"
                 target="_blank"
               >
                 Castos
