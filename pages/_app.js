@@ -1,4 +1,4 @@
-import "../styles/styles.scss";
+import "../styles/global.css";
 import "prismjs/themes/prism-tomorrow.css";
 import Layout from "../components/Layout";
 

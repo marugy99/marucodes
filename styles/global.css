@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;500;600&family=DM+Serif+Display&display=swap&family=Roboto+Mono:wght@400&display=swap");
+
+@layer base {
+  *:focus {
+    @apply outline-none;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-4 ring-cyan-500/50 rounded-md;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-bold;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl;
+  }
+
+  body {
+    @apply font-sans font-light text-black text-base sm:text-lg;
+  }
+
+  .hover-shadow {
+    @apply hover:shadow-lg hover:shadow-indigo-500/30;
+  }
+
+  #single-post h2 {
+    @apply text-3xl md:text-4xl text-center mt-8;
+  }
+
+  #single-post h3 {
+    @apply text-3xl md:text-4xl text-center mt-8;
+  }
+
+  #single-post p {
+    @apply my-4 first:mt-0;
+  }
+
+  #single-post a {
+    @apply underline underline-offset-4 decoration-dashed decoration-cyan-500;
+  }
+
+  #single-post ul {
+    @apply my-4 space-y-2 list-disc;
+  }
+
+  #single-post code {
+    @apply p-1 bg-white/50 rounded-md text-indigo-500;
+  }
+
+  #single-post strong {
+    @apply font-semibold;
+  }
+}
