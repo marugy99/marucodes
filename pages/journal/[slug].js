@@ -57,18 +57,12 @@ const SinglePost = ({ singlePost }) => {
             ogDescription={singlePost.excerpt}
             ogImage={singlePost.mainImage.asset.url}
           />
-          <h1 className="text-4xl leading-none md:text-5xl mt-4 text-center">
+          <h1 className="text-3xl leading-none md:text-[40px] mt-4 text-center">
             {singlePost.title}
           </h1>
-          <div className="flex my-4 items-center justify-center flex-col gap-1 sm:flex-row sm:gap-4 text-gray-500">
-            <ul className="flex items-center gap-2 flex-wrap">
-              {singlePost.categories.map((category, index) => (
-                <li key={index}>{category.title}</li>
-              ))}
-            </ul>
-            <p>{formatDate(singlePost.publishedAt)}</p>
-            <p>By {singlePost.author}</p>
-          </div>
+          <p className="text-gray-500 text-base text-center mx-auto block mt-2 mb-4">
+            {formatDate(singlePost.publishedAt)}
+          </p>
           <div id="single-post">
             <BlockContent
               blocks={singlePost.body}

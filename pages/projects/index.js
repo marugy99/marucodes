@@ -22,8 +22,8 @@ const Projects = ({ projectsData }) => {
             className="p-6 bg-white/25 mt-6 rounded-lg items-center grid sm:grid-cols-[auto,220px] gap-3 text-base"
           >
             <div>
-              <h2 className="text-2xl md:text-3xl">{project.title}</h2>
-              <ul className="flex items-center gap-4 text-gray-500 mb-2">
+              <h2 className="text-2xl">{project.title}</h2>
+              <ul className="flex items-center gap-4 text-gray-500 mb-2 text-base">
                 {project.stack.map((proj, index) => (
                   <li key={index}>{proj}</li>
                 ))}

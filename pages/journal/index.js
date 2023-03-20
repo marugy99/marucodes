@@ -19,15 +19,11 @@ const Posts = ({ postsData }) => {
           postsData.map((post, index) => (
             <Link href={`/journal/${post.slug.current}`} key={index}>
               <a className="p-6 bg-white/25 mt-6 rounded-xl block text-base hover-shadow transition duration-300 group">
-                <h2 className="text-2xl md:text-3xl">{post.title}</h2>
-                <div className="flex sm:items-center flex-col gap-1 mt-1 sm:mt-0 sm:flex-row sm:gap-4 text-gray-500">
-                  <ul className="flex items-center gap-2 flex-wrap list-none">
-                    {post.categories.map((category, index) => (
-                      <li key={index}>{category.title}</li>
-                    ))}
-                  </ul>
-                  <p>{formatDate(post.publishedAt)}</p>
-                  <p>By {post.author}</p>
+                <div className="flex sm:items-center justify-between sm:gap-4 flex-col sm:flex-row">
+                  <h2 className="text-2xl flex-1">{post.title}</h2>
+                  <p className="text-gray-500 text-sm">
+                    {formatDate(post.publishedAt)}
+                  </p>
                 </div>
                 <p className="mt-2">{post.excerpt}</p>
                 <p className="mt-2 flex items-center gap-2 text-gray-500 group-hover:text-gray-700">
