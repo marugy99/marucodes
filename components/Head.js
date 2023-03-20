@@ -8,7 +8,7 @@ const Header = ({ title, ogTitle, ogDescription, ogImage }) => {
 
   return (
     <Head>
-      <title>{title} | Call me Maru</title>
+      <title>{title} | Maru</title>
       <meta name="description" content={ogDescription} />
       <link rel="icon" href="/favicon.png" />
       <meta property="og:title" content={ogTitle} />
@@ -32,9 +32,9 @@ const Header = ({ title, ogTitle, ogDescription, ogImage }) => {
 };
 
 Header.defaultProps = {
-  ogTitle: "Call me Maru",
+  ogTitle: "Maru",
   ogDescription: "Self-taught front-end developer who loves art and design.",
-  ogImage: "https://i.imgur.com/OGre97T.png",
+  ogImage: "https://i.imgur.com/HBzsdrP.png",
 };
 
 export default Header;

@@ -1,11 +1,10 @@
-![](https://i.imgur.com/OGre97T.png)
+![](https://i.imgur.com/HBzsdrP.png)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7b72fc06-898a-4b98-bcd4-9852cceb36af/deploy-status)](https://app.netlify.com/sites/marucodes-new/deploys)
 
 - Second iteration of my personal website.
-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Also built with [Sanity](https://www.sanity.io/) to handle the content and SASS for the styling.
+- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Also built with [Sanity](https://www.sanity.io/) to handle the content and Tailwind for the styling.
 - Check the live site [here](https://marucodes.com/).
-
 
 ## Dev server
 
@@ -16,7 +15,6 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 
 ## Learn More
 
