@@ -3,7 +3,7 @@ import React from "react";
 const CodePenPreview = ({ value }) => {
   const { url } = value;
   if (!url) {
-    return (<div>Add a CodePen URL</div>)
+    return <div>Add a CodePen URL</div>;
   }
   const splitURL = url.split("/");
   // [ 'https:', '', 'codepen.io', 'sdras', 'pen', 'gWWQgb' ]
@@ -12,7 +12,7 @@ const CodePenPreview = ({ value }) => {
   return (
     <iframe
       height="370"
-      style={{ width: '100%' }}
+      style={{ width: "100%" }}
       scrolling="no"
       title="CodePen Embed"
       src={embedUrl}
@@ -27,17 +27,17 @@ export default {
   name: "codepen",
   type: "object",
   title: "CodePen Embed",
-  preview: {
+  components: {
     select: {
-      url: "url"
+      url: "url",
     },
-    component: CodePenPreview
+    // preview: CodePenPreview,
   },
   fields: [
     {
       name: "url",
       type: "url",
-      title: "CodePen URL"
-    }
-  ]
+      title: "CodePen URL",
+    },
+  ],
 };
