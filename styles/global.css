@@ -61,4 +61,8 @@
   #single-post strong {
     @apply font-semibold;
   }
+
+  #single-post blockquote {
+    @apply border-l-2 border-cyan-500 pl-2;
+  }
 }
