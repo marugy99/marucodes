@@ -53,10 +53,7 @@ const Navbar = () => {
       >
         <ul className="flex-col flex gap-3 items-start space-y-2">
           {navItems.map((item, index) => (
-            <li
-              className={`${toggleMenu ? "opacity-100" : "opacity-0"}`}
-              key={index}
-            >
+            <li key={index}>
               <Link href={item.href}>
                 <a className="hover-shadow transition hover:bg-white/20 px-3 py-2 rounded-md">
                   {item.name}

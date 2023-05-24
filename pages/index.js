@@ -61,26 +61,23 @@ export default function Home() {
                 <HiOutlineChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
               )}
             </button>
-            <p
-              className={`${
-                accordion === 1
-                  ? "max-h-[600px] mt-3 mb-4 opacity-100"
-                  : "max-h-0 opacity-0 invisible"
-              } px-3 text-base text-gray-600 transition-all duration-150`}
-            >
-              I&apos;m a self-taught developer and I truly love bringing ideas
-              to life in the form of beautiful, accessible and user-friendly web
-              apps. I&apos;m currently working as a full-time developer at
-              <a
-                className="ml-1 underline underline-offset-4 decoration-dashed decoration-cyan-500"
-                href="https://castos.com/"
-                rel="noreferrer"
-                target="_blank"
-              >
-                Castos
-              </a>
-              , a podcast hosting platform.
-            </p>
+
+            {accordion === 1 && (
+              <p className="px-3 text-base text-gray-600">
+                I&apos;m a self-taught developer and I truly love bringing ideas
+                to life in the form of beautiful, accessible and user-friendly
+                web apps. I&apos;m currently working as a full-time developer at
+                <a
+                  className="ml-1 underline underline-offset-4 decoration-dashed decoration-cyan-500"
+                  href="https://castos.com/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Castos
+                </a>
+                , a podcast hosting platform.
+              </p>
+            )}
             <button
               onClick={() => toggleAccordion(2)}
               className={`${
@@ -100,18 +97,15 @@ export default function Home() {
                 <HiOutlineChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
               )}
             </button>
-            <p
-              className={`${
-                accordion === 2
-                  ? "max-h-[600px] mt-3 mb-4 opacity-100"
-                  : "max-h-0 opacity-0 invisible"
-              } px-3 text-base text-gray-600 transition-all duration-150`}
-            >
-              During my free time I enjoy drawing, playing board games and
-              watching movies. I also like to write about my experience working
-              as a dev, about what I&apos;m learning and occasional random
-              stuff.
-            </p>
+
+            {accordion === 2 && (
+              <p className="px-3 text-base text-gray-600 mt-3">
+                During my free time I enjoy drawing, playing board games and
+                watching movies. I also like to write about my experience
+                working as a dev, about what I&apos;m learning and occasional
+                random stuff.
+              </p>
+            )}
             <button
               onClick={() => toggleAccordion(3)}
               className={`${
@@ -131,16 +125,12 @@ export default function Home() {
                 <HiOutlineChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
               )}
             </button>
-            <p
-              className={`${
-                accordion === 3
-                  ? "max-h-[600px] mt-3 mb-4 opacity-100"
-                  : "max-h-0 opacity-0 invisible"
-              } px-3 text-base text-gray-600 transition-all duration-150`}
-            >
-              I was born and raised in Venezuela, and I also lived in Santiago
-              de Chile <span aria-hidden="true">:)</span>
-            </p>
+            {accordion === 3 && (
+              <p className="px-3 text-base text-gray-600 mt-3">
+                I was born and raised in Venezuela, and I also lived in Santiago
+                de Chile <span aria-hidden="true">:)</span>
+              </p>
+            )}
           </div>
         </div>
 
