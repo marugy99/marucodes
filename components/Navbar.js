@@ -47,9 +47,9 @@ const Navbar = () => {
       <nav
         className={`${
           toggleMenu
-            ? "visible h-[180px] opacity-100 scale-100 px-2 py-3"
-            : "scale-75 invisible h-0 opacity-0"
-        } mt-3 sm:hidden transition-all origin-top-left bg-white/50 rounded-lg shadow-lg shadow-indigo-500/30`}
+            ? "scale-100 visible opacity-100 px-2 py-3"
+            : "scale-y-0 invisible opacity-0"
+        } mt-3 sm:hidden transition-all origin-top-left h-auto absolute inset-x-4 bg-white rounded-lg shadow-xl shadow-indigo-500/30`}
       >
         <ul className="flex-col flex gap-3 items-start space-y-2">
           {navItems.map((item, index) => (
