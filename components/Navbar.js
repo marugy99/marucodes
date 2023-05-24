@@ -44,23 +44,21 @@ const Navbar = () => {
       </button>
 
       {/* Mobile menu */}
-      <nav
-        className={`${
-          toggleMenu ? "px-2 py-3" : "scale-y-0 invisible opacity-0"
-        } mt-3 sm:hidden transition-all origin-top-left h-auto absolute inset-x-4 bg-white rounded-lg shadow-xl shadow-indigo-500/30`}
-      >
-        <ul className="flex-col flex gap-3 items-start space-y-2">
-          {navItems.map((item, index) => (
-            <li key={index}>
-              <Link href={item.href}>
-                <a className="hover-shadow transition hover:bg-white/20 px-3 py-2 rounded-md">
-                  {item.name}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      {toggleMenu && (
+        <nav className="mt-3 sm:hidden px-2 py-3 transition-all origin-top-left h-auto absolute inset-x-4 bg-white rounded-lg shadow-xl shadow-indigo-500/30">
+          <ul className="flex-col flex gap-3 items-start space-y-2">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <Link href={item.href}>
+                  <a className="hover-shadow transition hover:bg-white/20 px-3 py-2 rounded-md">
+                    {item.name}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
 
       {/* Desktop menu */}
       <nav className="hidden sm:block">
