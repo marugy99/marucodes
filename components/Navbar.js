@@ -47,22 +47,16 @@ const Navbar = () => {
       <nav
         className={`${
           toggleMenu
-            ? "bg-white/50 px-2 py-3 rounded-lg shadow-lg shadow-indigo-500/30 scale-100"
-            : "scale-75"
-        } mt-3 sm:hidden transition-all origin-top-left`}
+            ? "visible h-[180px] opacity-100 scale-100 px-2 py-3"
+            : "scale-75 invisible h-0 opacity-0"
+        } mt-3 sm:hidden transition-all origin-top-left bg-white/50 rounded-lg shadow-lg shadow-indigo-500/30`}
       >
-        <ul
-          className={`${
-            toggleMenu
-              ? "visible max-h-[500px] opacity-100 scale-100"
-              : "invisible max-h-0 opacity-0 scale-75"
-          } flex-col flex gap-3 transform transition-all items-start space-y-2 origin-top-left`}
-        >
+        <ul className="flex-col flex gap-3 transform transition-all items-start space-y-2 origin-top-left">
           {navItems.map((item, index) => (
             <li
               className={`${
-                toggleMenu ? "opacity-100" : "opacity-0"
-              } transition-all sm:opacity-100`}
+                toggleMenu ? "opacity-100 visible" : "opacity-0 invisible"
+              } transition-all sm:opacity-100 sm:visible`}
               key={index}
             >
               <Link href={item.href}>
