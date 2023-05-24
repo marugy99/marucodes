@@ -50,7 +50,10 @@ const Navbar = () => {
             {navItems.map((item, index) => (
               <li key={index}>
                 <Link href={item.href}>
-                  <a className="hover-shadow transition hover:bg-white/20 px-3 py-2 rounded-md">
+                  <a
+                    onClick={() => setToggleMenu(false)}
+                    className="hover-shadow transition hover:bg-white/20 px-3 py-2 rounded-md"
+                  >
                     {item.name}
                   </a>
                 </Link>
