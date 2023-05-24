@@ -55,8 +55,10 @@ const Navbar = () => {
           {navItems.map((item, index) => (
             <li
               className={`${
-                toggleMenu ? "opacity-100 visible" : "opacity-0 invisible"
-              } transition-all sm:opacity-100 sm:visible`}
+                toggleMenu
+                  ? "h-[22px] opacity-100 visible"
+                  : "opacity-0 invisible h-0"
+              } transition-all`}
               key={index}
             >
               <Link href={item.href}>
