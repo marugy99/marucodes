@@ -51,14 +51,10 @@ const Navbar = () => {
             : "scale-75 invisible h-0 opacity-0"
         } mt-3 sm:hidden transition-all origin-top-left bg-white/50 rounded-lg shadow-lg shadow-indigo-500/30`}
       >
-        <ul className="flex-col flex gap-3 transform transition-all items-start space-y-2 origin-top-left">
+        <ul className="flex-col flex gap-3 items-start space-y-2">
           {navItems.map((item, index) => (
             <li
-              className={`${
-                toggleMenu
-                  ? "h-[22px] opacity-100 visible"
-                  : "opacity-0 invisible h-0"
-              } transition-all`}
+              className={`${toggleMenu ? "opacity-100" : "opacity-0"}`}
               key={index}
             >
               <Link href={item.href}>
