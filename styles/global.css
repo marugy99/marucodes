@@ -65,4 +65,8 @@
   #single-post blockquote {
     @apply border-l-2 border-cyan-500 pl-2;
   }
+
+  iframe {
+    max-width: 100%;
+  }
 }
