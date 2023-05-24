@@ -49,24 +49,24 @@ const Navbar = () => {
           toggleMenu
             ? "bg-white/50 px-2 py-3 rounded-lg shadow-lg shadow-indigo-500/30 scale-100"
             : "scale-75"
-        } mt-3 sm:hidden transition-all duration-300 origin-top-left`}
+        } mt-3 sm:hidden transition-all origin-top-left`}
       >
         <ul
           className={`${
             toggleMenu
               ? "visible max-h-[500px] opacity-100 scale-100"
               : "invisible max-h-0 opacity-0 scale-75"
-          } flex-col flex gap-3 transform transition-all items-start duration-300 space-y-2 origin-top-left`}
+          } flex-col flex gap-3 transform transition-all items-start space-y-2 origin-top-left`}
         >
           {navItems.map((item, index) => (
             <li
               className={`${
                 toggleMenu ? "opacity-100" : "opacity-0"
-              } transition-all duration-300 sm:opacity-100`}
+              } transition-all sm:opacity-100`}
               key={index}
             >
               <Link href={item.href}>
-                <a className="hover-shadow transition duration-300 hover:bg-white/20 px-3 py-2 rounded-md">
+                <a className="hover-shadow transition hover:bg-white/20 px-3 py-2 rounded-md">
                   {item.name}
                 </a>
               </Link>
@@ -81,7 +81,7 @@ const Navbar = () => {
           {navItems.map((item, index) => (
             <li key={index}>
               <Link href={item.href}>
-                <a className="hover-shadow transition duration-300 hover:bg-white/20 px-3 py-2 rounded-md">
+                <a className="hover-shadow transition hover:bg-white/20 px-3 py-2 rounded-md">
                   {item.name}
                 </a>
               </Link>
