@@ -1,7 +1,7 @@
 const CastosPlayer = ({ url }) => {
     return (
         <iframe
-            class="castos-iframe-player"
+            className="castos-iframe-player"
             src={url}
             width="100%"
             height="600"
