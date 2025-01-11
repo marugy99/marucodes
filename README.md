@@ -1,10 +1,5 @@
-![](https://i.imgur.com/HBzsdrP.png)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7b72fc06-898a-4b98-bcd4-9852cceb36af/deploy-status)](https://app.netlify.com/sites/marucodes-new/deploys)
-
-- Second iteration of my personal website.
+- Deprecated version of my personal website, for the new version see [marucodesv2](https://github.com/marugy99/marucodesv2).
 - This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Also built with [Sanity](https://www.sanity.io/) to handle the content and Tailwind for the styling.
-- Check the live site [here](https://marucodes.com/).
 
 ## Dev server
 
